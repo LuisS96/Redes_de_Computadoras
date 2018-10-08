@@ -17,6 +17,7 @@ Establish a wireless communication using Bluetooth between a transmitter and a r
 
 ### Architecture
 In order to create a Bluetooth system, the connection between a Master an a Slave device must be stablished. The moment this first connection is verified by the two devices, a piconect is created. 
+
 The piconet is the most basic network in a Bluetooth system, it can contain a single Master and up to seven Slaves. Furthermore, the a collection of piconets interconnectd by slaves is called a scatternet. It is important to mention that the maximum amount of nodes in a net is 255. 
 
 ### Protocols
