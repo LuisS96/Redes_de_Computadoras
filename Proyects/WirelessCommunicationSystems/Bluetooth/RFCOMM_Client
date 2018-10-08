@@ -1,0 +1,11 @@
+import bluetooth
+
+bd_addr = "00:00:00:00:00:00" #Server MAC address
+
+port = 1 #Port to be used
+sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM) #Create socket to use
+sock.connect((bd_addr, port)) #Connect socket with the host
+
+sock.send("Hello World!") #Send data to the server
+
+sock.close() #Close communication
