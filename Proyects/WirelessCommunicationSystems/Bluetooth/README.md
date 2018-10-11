@@ -52,6 +52,9 @@ The bottom layer (the physical radio layer), is the responsible for the correct 
 *UPPER LAYERS*
 
 ### Frame Structure
+Basic rate data frame and enhanced rate data frame
+
+![Bluetooth Data Frame Rates](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_DataFrame.png)
 
 
 #### Bluetooth Network Encapsulation Protocol (BNEP)
