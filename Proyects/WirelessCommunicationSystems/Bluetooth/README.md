@@ -18,6 +18,8 @@ Establish a wireless communication using Bluetooth between a transmitter and a r
 ### Architecture
 In order to create a Bluetooth system, the connection between a Master an a Slave device must be stablished. The moment this first connection is verified by the two devices, a piconect is created. 
 
+![Bluetooth System](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/tcp_udp/Proyects/TCP_UDP/Bluetooth_Net.png)
+
 The piconet is the most basic network in a Bluetooth system, it can contain a single master and up to seven slaves. Furthermore, the a collection of piconets interconnectd by slaves is called a scatternet. It is important to mention that the maximum amount of nodes in a Bluetooth net is 255. 
 
 The master and slave design allows the manufacturers to produce low-cost Bluetooth chips. The main disadvantage of this design is that the slaves are only capable of doing what a master tells them to.
@@ -37,7 +39,7 @@ There are no entities defined, therefore devices type 2 can communicate with dev
 - #### Bluetooth Protocol Stack
 The BLuetooth Protocol Stack architecture can be grouped in three main layers: the physical layer, the datalink layer, and the upper layer. The following image shows how the diferent layers interact with each other:
 
-*PONER FOTO 4-35 *
+!Bluetooth Architecture](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/tcp_udp/Proyects/TCP_UDP/Bluetooth_Architecture.png)
 
 The bottom layer (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models.
 
