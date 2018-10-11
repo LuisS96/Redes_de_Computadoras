@@ -41,17 +41,15 @@ The BLuetooth Protocol Stack architecture can be grouped in three main layers: t
 
 ![Bluetooth Architecture](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Architecture.png)
 
-The bottom layer (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models.
-
-*DATALINK*
-
-*UPPER LAYERS*
-
 ### Physical Layer 
 Protocol Radio Layer
 
-### Link Layers
+The bottom layer (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models.
 
+### Link Layers
+*DATALINK*
+
+*UPPER LAYERS*
 
 ### Frame Structure
 
