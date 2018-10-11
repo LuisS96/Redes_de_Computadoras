@@ -55,8 +55,6 @@ The link manager protocol creates link between master and slave, these are sets 
 
 After the pairing is complete, the link manager protocol will set the links; however, two main kinds of link can be established: Synchronous Connection Oriented (SCO), and Asynchronous ConnectionLess (ACL). As the name implies, a SCO link is used for real-time data transmission; here, frames are never retransmitted and forward error correction is used. In contrast, an ACL link manages packet-switched data which is available at irregular intervals. It is important to mention that a slave can only have a single ACL link to its master.
 
-*UPPER LAYERS*
-
 ### Frame Structure
 Basic rate data frame and enhanced rate data frame
 
