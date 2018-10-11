@@ -42,12 +42,12 @@ The BLuetooth Protocol Stack architecture can be grouped in three main layers: t
 ![Bluetooth Architecture](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Architecture.png)
 
 ### Physical Layer 
-Protocol Radio Layer
-
-The bottom layer (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models.
+The bottom layer of the architecture (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models. It moves the data bits between the master and the slave. This layer uses a low-power system with a range of 10 meters and a 2.4 GHz band, this band is divided in 79 channels, each using 1 MHz. A process called adaptive frequency hopping is implemented with the porpuse of reducing interference from and to other RF signals; this is because early versions of Bluetooth used to collide their information with the data transmitted with 802.11 technology.
 
 ### Link Layers
-*DATALINK*
+In the Bluetooth architecture, the link control (baseband) layer is the one in charge to turn the raw bit stream into a frame and define some key formats. This layer is the equivalent of a MAC sublayer in a 802.11 architecture.
+
+A key feature of this layer is that it creates a time division multiplexing, where the master defines a series of time slots and it transmits in the even slots, in contrast the slave transmits in the odd ones. Once the time slots are defined, the frames can be transmitted. These frames can be 1, 3, or 5 slots long; besides, the payload of the frame can be encrypted with a key wich is selected when the conncetion between master and slave is created.
 
 *UPPER LAYERS*
 
