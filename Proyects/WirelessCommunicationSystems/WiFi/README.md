@@ -59,11 +59,10 @@ Provides the Access Point's clients with IP addresses to be able to communicate 
 
 
 ## Equipment and Material
-
+- Raspberry Pi 3 Model B+ (2 units).
+The Raspberry Pi 3 Model B+ have an integrated WiFi Module.
 
 ## Development
-
-### Electrical Circuit
 ### Software
 #### Access Point
 A Raspberry Pi was set up as an Access Point in a standalone network (NAT) to develop the task. To set up the Raspberry Pi, the following instructions where made.
