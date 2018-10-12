@@ -8,7 +8,7 @@ Professor: **Dr. Moises Sanchez Adame**
 University: **CETYS University, Tijuana.**
 
 #### Abstract
-
+In the following document, it is explained how WiFi as a wireless communication system works and the way on how it was implemented between two wireless devices.
 
 ## Objective
 Establish a wireless communication using WiFi between a transmitter and a receptor to control a process.
