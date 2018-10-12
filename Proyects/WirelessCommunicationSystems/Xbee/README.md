@@ -46,6 +46,30 @@ Here, in the application framework, a single Endpoint ID is assigned. Also, an A
 ### MAC Sublayer Protocol
 
 ### Frame Structure
+In the ZigBee technology, the frames are transported as 802.15.4 payload. This format is illustrated as follows:
+- Frame Control
+
+  In the frame control are specified the type of package that is sent. These are the different parameters that can be specified: frame type, protocol version, route discovery, multicast, security, source route,destination IEEE address, and source IEEE address. It is important to mention that these parameters are only informational, no actual data is in this field.
+
+- Destination Address
+
+  In the destination field, we can specify where we are sendiong our packet: 0xffff broadcast to all node (this includes sleeping devices), 0xfffd broadcast to all awake devices, and 0xfffc broadcast only to routers.
+
+- Source Address
+
+  Here we can find the source address.
+
+- Radious
+
+  The radious defines the maximum number of hops allowed for this packet.
+
+- Sequence Number
+
+  This is the rolling counter.
+
+- Payload
+
+  The payload is our actuall APS data. However, we can also find network layer commands.
 
 ## Materials
 * 2 XBee devices of the same model (S1, S1 Pro, S2, S2 Pro or S2C)
