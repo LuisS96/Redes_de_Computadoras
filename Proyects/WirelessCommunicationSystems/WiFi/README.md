@@ -57,6 +57,8 @@ Provides the Access Point's clients with IP addresses to be able to communicate 
 A set of Media Access Control (MAC) and Physical Layer (PHY) specifications for implementing a WLAN communication in the 900 MHz and 2.4, 5, and 60 GHz frequency bands. These are widely used to allow devices to talk with each other and access the internet without being wired.
   - **Othogonal Frequency-Division Multiplexing (OFDM)**
   Method of encoding digital data on multiple carrier frequencies.
+  
+![802.11g Bandwidth channels](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211g_bandwidth.png)
 
 
 ### Physical Layer
