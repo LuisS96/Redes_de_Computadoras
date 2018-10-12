@@ -78,15 +78,13 @@ The contents of the frame and their respective names and number of bits are desc
 - Data (0-2744 bits): Contains the data of the client
 
 ## Equipment and Material
-- Two Raspberry Pi 3 Model B+
-- One protoboard
-- One LED (Light-Emitting Diode)
+- Raspberry Pi 3 Model B+ (2 units).
+  - The Raspberry Pi 3 Model B+ has an integrated Bluetooth module.
 
 ## Development
 
-### Electrical Circuit
 ### Software
-To create the communciation between the two Raspberry Pi, their own bluetooth module were used.
+To create the communciation between the two Raspberry Pi, their integrated bluetooth module were used. Fortunately, Python has an existing library that provides us with a simple way of using the integrated module. In order to use it, the line  `import bluetooth` must be at the top of our code.
 
 ### Communication
 
@@ -128,7 +126,11 @@ sock.close() #Close communication
 
 ## Results and Analysis
 
+
+
 ## Conclusions
+
+
 
 ## References
 https://ecee.colorado.edu/~ecen4242/marko/Bluetooth/Bluetooth/SPECIFICATION/RFCOMM.htm
