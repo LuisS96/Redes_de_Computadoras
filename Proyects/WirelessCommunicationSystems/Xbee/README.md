@@ -53,6 +53,9 @@ sudo apt-get install python-serial
 
 ### Communication
 Afterwarads, create a Python script called Transmitter.py that includes the following lines:
+
+![Python version](https://img.shields.io/badge/python-v2.7-brightgreen.svg)
+
 ```
 #!usr/bin/env python
 
