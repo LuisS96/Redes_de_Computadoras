@@ -7,10 +7,32 @@ Establish a connection between a transmitter and a receiver by building a wirele
 ## Theoretical Framework
 
 ### Architecture
+The typical ZigBee architecture can be organized in seven distinct layers, where the two on the bottom corresponds to the IEEE 802.15.4 standard; the rest of these layers allows the creation of a mesh network that makes use of the 802.15.4 radio links.
+
+ ADD PHOTO
+
+The 802.15.14 standard provides 16 channels on the 2.4GHz band, these channels are numbered from 11 to 26. Since ZigBee only uses the nonbeacon-enabled mode of 802.15.4, there is no possibility to access the network in a deterministically mode nor to reserve bandwidth. Furthermore, ZigBee restricts PAN IDs in the range of 0x0000 to 0x3FFF; this is only a subset of the 802.15.4 range.
+
+ZigBee Node Types
+
+-End Device 
+
+-Router
+
+-Coordinator
 
 ### Protocols
 
+Application support sublayer
+
+ZigBee Device Object
+
+ZigBee Cluster Library
+
+Application Framework
+
 ### Physical Layer
+
 
 ### MAC Sublayer Protocol
 
@@ -48,7 +70,15 @@ JV, MY
 ## Conclusion
 ## References
 [1] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+
 [2] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 327-328). 
+
 [3] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+
 [4] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 329).
+
 [5] EPC Global Standard
+
+[6] Hersent, O., Boswarthick, D., & Elloumi, O. (2011). The internet of things : key applications and protocols. Retrieved from https://ebiblio.cetys.mx:4153
+
+[7] Eady, F. (2010). Hands-on zigbee : implementing 802. 15. 4 with microcontrollers. Retrieved from https://ebiblio.cetys.mx:4153
