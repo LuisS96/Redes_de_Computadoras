@@ -40,23 +40,42 @@ A connector used to esblish a connection between wired networks and wireless net
 ![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/WiFi_RaspberryPi.png)
 
 ### Protocols
-- IP address (Internet Protocol address)
+- **IP address (Internet Protocol address).**
 Sets a direction for packets to be delivered from the source host to the destination host. The packets are encapsulated for the data to be delivered. It first started as a connectionless datagram service now named User Datagram Protocol(UDP), now it is a connection-oriented Transmission Control Protocol (TCP).
 
 The version used is IPv4 represented in the dot-decimal notation with a 32-bit integer value, IPv4 has runned out making of its successor IPv6 using 128-bit address represented as eight groups of four hexadecimal digits, providing approximately 4.3 billion addresses, 7.9 x 10^28 times as many as IPv4.
 
-- TCP (Transmission Control Protocol)
+- **TCP (Transmission Control Protocol)**
 Provides a reliable communication through a connection-oriented service between the server and the client, also known as a host-to-host connectivity at the transport layer of the TCP/IP model. This layer checks for data errors and provides the mechanisms to request retransmission of the lost data, therefore it guarantees that all the data received is correct and in order by keeping track of the 'segments'.
 
 TCP is mainly used when using the internet such as the World Wide Web (WWW), File Transfer Protocol (FTP), Secure Shell, etc.
 
-- DHCP (Dynamic Host Configuration Protocol)
+- **DHCP (Dynamic Host Configuration Protocol)**
 Provides the Access Point's clients with IP addresses to be able to communicate with other hosts. 
 
-- IEEE 802.11
-A set of Media Access Control (MAC) and physical later specifications for implementing a WLAN communication in the 900 MHz and 2.4, 5, and 60 GHz frequency bands. These are widely used to allow devices to talk with each other and access the internet without being wired.
+- **IEEE 802.11**
+A set of Media Access Control (MAC) and Physical Layer (PHY) specifications for implementing a WLAN communication in the 900 MHz and 2.4, 5, and 60 GHz frequency bands. These are widely used to allow devices to talk with each other and access the internet without being wired.
+  - **Othogonal Frequency-Division Multiplexing (OFDM)**
+  Method of encoding digital data on multiple carrier frequencies.
+
 
 ### Physical Layer
+The Physical layer defines the specifications for devices. It defines the relationship between a device and a transmission medium.
+
+The PHY layer functions and services are:
+- Establishment and termination of a connection to a medium.
+- Participation in the process where the communication resources are effectively shared.
+- Modulation or conversion between the representation of digital data in user equipment and the signals transmitted over a channel.
+
+#### Sublayers
+- **The Physical Layer Convergence Procedure (PLCP)** acts as an adaptation later.
+
+- **The Clear Channel Assessment (CCA)** mode and building packets for different PHY technologies in which the PLCP is responsible for.
+
+- **The Physical Medium Dependent (PMD)** specifies modulation and coding techniques. The PHY management layer takes care of the management issues.
+
+The station management sub layer is responsible for co-odination of interaction between the Data Link Layer (DLL) and the PHY layers.
+
 ### MAC Sublayer Protocol
 ### Frame Structure
 
@@ -187,3 +206,4 @@ s.close() #Closes the connection through the socket
 
 
 ## References
+https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf
