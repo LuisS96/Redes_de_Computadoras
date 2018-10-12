@@ -77,6 +77,16 @@ The PHY layer functions and services are:
 The station management sub layer is responsible for co-odination of interaction between the Data Link Layer (DLL) and the PHY layers.
 
 ### MAC Sublayer Protocol
+The MAC sub-layer provides the functional and procedural means to transfer data between network clients to detect errors that may occur on the physical layer, and possibly correct them. 
+
+It also provides access to contention based and contention free traffic on different kinds of physical layers. The responsiblities in this layer are divided into:
+
+- **MAC sub-layer**
+Defines access mechanisms and packets formats
+
+- **MAC management sub-layer**
+Defines power management, security and roaming services.
+
 ### Frame Structure
 
 
