@@ -19,7 +19,7 @@ Establish a wireless communication using Bluetooth between a transmitter and a r
 ### Architecture
 In order to create a Bluetooth system, the connection between a Master an a Slave device must be stablished. The moment this first connection is verified by the two devices, a piconect is created. 
 
-![Bluetooth System](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Net.png)
+![Bluetooth System](Bluetooth_Net.png)
 
 The piconet is the most basic network in a Bluetooth system, it can contain a single master and up to seven slaves. Furthermore, the a collection of piconets interconnectd by slaves is called a scatternet. It is important to mention that the maximum amount of nodes in a Bluetooth net is 255. 
 
@@ -40,7 +40,7 @@ There are no entities defined, therefore devices type 2 can communicate with dev
 - #### Bluetooth Protocol Stack
 The BLuetooth Protocol Stack architecture can be grouped in three main layers: the physical layer, the datalink layer, and the upper layer. The following image shows how the diferent layers interact with each other:
 
-![Bluetooth Architecture](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Architecture.png)
+![Bluetooth Architecture](Bluetooth_Architecture.png)
 
 ### Physical Layer 
 The bottom layer of the architecture (the physical radio layer), is the responsible for the correct radio transmission and modulation. It is te equivalent of the physical layer in the OSI and 802 models. It moves the data bits between the master and the slave. 
@@ -59,12 +59,12 @@ After the pairing is complete, the link manager protocol will set the links; how
 ### Frame Structure
 The frame format that Bluetooth technology uses can be separated in two forms: the basic rate data format, and the enhanced rate data format. Both forms star with an access code that identifies each master entity, followed by a header. The number of bits that each segment covers is depicted in the next image.
 
-![Bluetooth Data Frame Rates](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_DataFrame.png)
+![Bluetooth Data Frame Rates](Bluetooth_DataFrame.png)
 
 If the frame is sent at a basic data rate, the rest of the frame is dedicated to the data package. It can carry up to 2744 bits for a five slot transmission. However, if the data is sent at an enhanced rate, the next 16 bits are use as a guard field and a synchronization pattern to switch into the faster data rate, which can carry two or three symbols per bit, allowing up to 8184 bits of data. This enhanced-frame ends with a two bit trailer.
 
 #### Bluetooth Network Encapsulation Protocol (BNEP)
-![BNEP Frame Structure](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Frame_Format.png)
+![BNEP Frame Structure](Bluetooth_Frame_Format.png)
 
 The contents of the frame and their respective names and number of bits are descrived below. This is exclusivo for the basic data rate frame.
 
