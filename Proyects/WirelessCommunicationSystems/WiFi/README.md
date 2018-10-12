@@ -16,7 +16,29 @@ Establish a wireless communication using WiFi between a transmitter and a recept
 ## Theoretical Framework
 
 ### Architecture
+#### Types
+- **Infrastructure**
+The infrastructure is made by any device that can communicate with a work station through a wireless Local Area Network (LAN) or WiFi, this can only be done with an access point.
+
+- **Ad hoc Network**
+Any obstacle there can be between work stations that are linked together are referred as ad hocs.
+
+- **Mixed Network**
+A mixed network is developed when an infrastructure and an ad hoc network are combined, working simultaneously within.
+
+#### Components
+To create a network, components are needed, these are:
+- **Access Point**
+A type of routing device that can transmit and receive data using wireless networking. This devices have a limit of devices that can have access to the network.
+
+- **Clients**
+Devices that want to communicate with others and that can connect with an AP via the AP network.
+
+- **Bridge**
+A connector used to esblish a connection between wired networks and wireless networks.
+
 ![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/tcp_udp/Proyects/TCP_UDP/WiFi_RaspberryPi.png)
+
 ### Protocols
 - IP address (Internet Protocol address)
 Sets a direction for packets to be delivered from the source host to the destination host. The packets are encapsulated for the data to be delivered. It first started as a connectionless datagram service now named User Datagram Protocol(UDP), now it is a connection-oriented Transmission Control Protocol (TCP).
