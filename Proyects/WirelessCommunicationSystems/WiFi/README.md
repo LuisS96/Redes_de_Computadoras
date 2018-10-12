@@ -84,7 +84,7 @@ Yet, a standalone network needs to be configured for the Raspberry Pi to act as 
 The dhcpcd file needs to be configured with the static IP Address `/etc/dhcpcd.conf` and at the end of the file edit it with the following:
 ```
 interface wlan0
-  static ip_address=10.0.0.1/24
+  static ip_address=192.168.1.1/24
   nohook wpa_supplicant # Not to be run when the Raspberry Pi is initialized
 ```
 
@@ -93,7 +93,7 @@ The interface `wlan0` is usually used when using the Raspberry Pi module, if a U
 The DHCP server, provided by dnsmasq has to be configured.
 ```
 interface wlan0 # Interface in use
-  dhcp-range=10.0.0.2,10.0.0.10,255.255.255.0,24h
+  dhcp-range=1192.168.1.2,192.168.1.10,255.255.255.0,24h
 ```
 A range of IP addresses is configured that intended to be provided, it could go up to `10.0.0.254`, the netmask is also set according to our network class and a lease time of 24 hours (optional).
 
@@ -163,7 +163,7 @@ connection.close() #When finished, connection with the client is closed
 ```
 import socket
 
-TCP_IP = '10.0.0.1' #IP Address of the server
+TCP_IP = '192.168.1.1' #IP Address of the server
 TCP_PORT = 5005 #Port used
 BUFFER_SIZE = 1024
 
