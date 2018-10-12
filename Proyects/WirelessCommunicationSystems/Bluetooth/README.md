@@ -84,7 +84,7 @@ The contents of the frame and their respective names and number of bits are desc
 ## Development
 
 ### Software
-To create the communciation between the two Raspberry Pi, their integrated bluetooth module were used. Fortunately, Python has an existing library that provides us with a simple way of using the integrated module. In order to use it, the line  `import bluetooth` must be at the top of our code.
+To create the communication between the two Raspberry Pi, their integrated Bluetooth module were used. Fortunately, Python has an existing library that provides us with a simple way of using the integrated module. In order to use it, the line  `import bluetooth` must be at the top of our code.
 
 ### Communication
 
@@ -125,12 +125,16 @@ sock.close() #Close communication
 ```
 
 ## Results and Analysis
-
-
+As the two codes start running in their respective Raspberry Pi, the links are established and the communication starts to occur. When the Client connects its socket to the host, the message `Hello World!` is sent. At this time, the Server print the received data as:
+```
+received [Hello World!]
+```
+Clearly, Bluetooth communication takes place between our devices. 
 
 ## Conclusions
+As we can see, the Bluetooth technology has taken place in our daily lifes, from almost every cellphone to gadgets like keyboards or mouses. Here, we recreated the most simple communication between devices; this code can be imporved to create more extensive and complex communication. From controlling a simple LED to transmitting real-time audio files. The possibilities of improvemente are at our reach.
 
-
+It is important to emphasize that this technology is not perfect, security and communication issues can occurr at any time. However this is an evolving topic, solutions and improvements are implemented with each released version.
 
 ## References
 https://ecee.colorado.edu/~ecen4242/marko/Bluetooth/Bluetooth/SPECIFICATION/RFCOMM.htm
