@@ -28,14 +28,17 @@ The 802.15.14 standard provides 16 channels on the 2.4GHz band, these channels a
   ZigBee Coordinator are able to create a network or join one, if they join one, they act as a ZigBee router. These devices contain the trust center, which is responsible of management of security keys and the admission or declination of new nodes.
 
 ### Protocols
+#### Application Support Sublayer (APS) 
+The APS is in charge of several things, first of all the multiplexing and demultiplexing of the network layer messages, this layer forwards them into their appropriate application object (using the endpoint ID). Besides, this layer records nodes and endpoints in a binding table. Perhaps the most important feature, is that it is responsible for the management of security keys.
 
-Application support sublayer
+#### ZigBee Device Object (ZDO)
+The ZDO layer is responsible of the endpoint0 application and manage the state of the ZigBee node, it is designed to discover nodes and join networks, as well as additional primitives supporting the concept of binding.
 
-ZigBee Device Object
+#### ZigBee Cluster Library (ZCL)
 
-ZigBee Cluster Library
 
-Application Framework
+#### Application Framework
+
 
 ### Physical Layer
 
