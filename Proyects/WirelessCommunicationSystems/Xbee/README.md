@@ -99,13 +99,16 @@ JV, MY
 ### Electric Circuit
 ### Software
 ### Communication
+The communication between modules is achieved with the following python code. An important aspect to consider while developing the code is that the two modules are configured to be a certain type of node, one a coordinator and the other as an end point.
 
+The first module, the coordinator is controlled via USB adapter connected to a Raspberry Pi, wich itself has the following code:
 ```
- INSERTAR CODIGOS #1
+ INSERTAR CODIGOS #1 Coordinator
 ```
 
+In the other hand, we have the end point module. Just as before, this is connected to a Raspberry Pi via a second USB adapter. This second module is controlled with the following code:
 ```
- INSERTAR CODIGOS #2
+ INSERTAR CODIGOS #2 End Point
 ```
 
 ## Results and Analysis
