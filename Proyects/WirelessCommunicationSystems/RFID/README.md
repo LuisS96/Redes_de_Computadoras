@@ -30,7 +30,7 @@ In contrast to other physical layers, the reader is always transmitting a signal
 To send data to the tags, the reader uses two amplitude levels, being the lower one the transition between two bits. A 0 bit is represented with a shorter period between low-power states, and a 1 bit is given by a longer period. Tags responses consist of the alternation of its backscatter signal in fixed intervals. 0s have more pulses than 1s, and the reader interprets between this two types of signals.
 
 ### MAC Sublayer Protocol
-Generally, there will be an unknown number of tags nearby, so it is necessary for the reader to inventory all the tags in range; however, broadcasting a query to ask all tags to send their identifiers may cause data collision if all tags reply right away. This situation is similar to t........., so the protocol used is slotted ALOHA, which suits well the problem that tags cannot hear their neighbors. 
+Generally, there will be an unknown number of tags nearby, so it is necessary for the reader to inventory all the tags in range; however, broadcasting a query to ask all tags to send their identifiers may cause data collision if all tags reply right away. This situation is similar to the Hawaiian isle computers trying to communicate between theme, so the protocol used is slotted ALOHA, which suits well the problem that tags cannot hear their neighbors. 
 
 The sequence of messages used to identify the surrounding tags starts with a Query message in the first slot (slot 0). Each of the next Qrepeat messages sent advances to the next slot. The reader must also specify the range of slots over which the tags will randomize transmissions; afterwards, each tag picks a random slot in which their reply will be sent. The reply is consists of a 16-bit random number inside a RN16 message. If there is no collision, the reader is able to receive the message and replies back with an ACK (acknowledge) message, to tell the tag that it can now send its identifier. Once its identifier gets to the reader, the the tag stops responding to new Query messages until all the remaining tags were identified. 
 
@@ -44,6 +44,11 @@ The frame structure and size depend on the type of message the reader wants to s
 The first four bits of all reader messages specify the command type, in this case, 1000 denotes a Query command. The next three parameters specify the physical layer parameters that modify the frequency link, data rate and modulation format, and pilot tone inclusion in reader-tag transmissions.   Sel chooses which tags will respond to this reader's Query command. Session chooses the tag session where to send the Query command for the inventory round. Target chooses whether the tags with flag A or with flag B should take part in the inventory round. Q is a very important parameter, since it specifies the number of slots in the current round. The CRC field is a 5 bit error checking code, shorter than other CRCs because the RFID frames are shorter than in other technologies. The other commands will have a similar format to his one. [5].
 
 ## Materials
+* 2 Raspberry PIs
+* 1 MFRC522 card
+* 1 RFID tag or RFID card
+* 8 Male-to-Female jumpers
+* 1 Small breadboard
 
 ## Procedure
 
