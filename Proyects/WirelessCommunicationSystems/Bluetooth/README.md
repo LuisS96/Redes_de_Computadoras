@@ -56,10 +56,11 @@ The link manager protocol creates link between master and slave, these are sets 
 After the pairing is complete, the link manager protocol will set the links; however, two main kinds of link can be established: Synchronous Connection Oriented (SCO), and Asynchronous ConnectionLess (ACL). As the name implies, a SCO link is used for real-time data transmission; here, frames are never retransmitted and forward error correction is used. In contrast, an ACL link manages packet-switched data which is available at irregular intervals. It is important to mention that a slave can only have a single ACL link to its master.
 
 ### Frame Structure
-Basic rate data frame and enhanced rate data frame
+The frame format that Bluetooth technology uses can be separated in two forms: the basic rate data format, and the enhanced rate data format. Both forms star with an access code that identifies each master entity, followed by a header. The number of bits that each segment covers is depicted in the next image.
 
 ![Bluetooth Data Frame Rates](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_DataFrame.png)
 
+If the frame is sent at a basic data rate, the rest of the frame is dedicated to the data package. It can carry up to 2744 bits for a five slot transmission. However, if the data is sent at an enhanced rate, the next 16 bits are use as a guard field and a synchronization pattern to switch into the faster data rate, which can carry two or three symbols per bit, allowing up to 8184 bits of data. This enhanced-frame ends with a two bit trailer.
 
 #### Bluetooth Network Encapsulation Protocol (BNEP)
 ![BNEP Frame Structure](https://www.ahirlabs.com/wp-content/uploads/2017/12/Frameformat.png)
