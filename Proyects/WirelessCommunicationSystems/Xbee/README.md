@@ -35,10 +35,10 @@ The APS is in charge of several things, first of all the multiplexing and demult
 The ZDO layer is responsible of the endpoint0 application and manage the state of the ZigBee node, it is designed to discover nodes and join networks, as well as additional primitives supporting the concept of binding.
 
 #### ZigBee Cluster Library (ZCL)
-
+This layer consist of a library of functions that can be used in application profiles, public or private. It provides the network group formation and management. It is considered as one of the key assets of ZigBee.
 
 #### Application Framework
-
+Here, in the application framework, a single Endpoint ID is assigned. Also, an API environment is provided to ZigBee application developers.
 
 ### Physical Layer
 
