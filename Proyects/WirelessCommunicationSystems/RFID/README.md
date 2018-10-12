@@ -38,16 +38,30 @@ The frame structure and size depend on the type of message the reader wants to s
 The first four bits of all reader messages specify the command type, in this case, 1000 denotes a Query command. The next three parameters specify the physical layer parameters that modify the frequency link, data rate and modulation format, and pilot tone inclusion in reader-tag transmissions.   Sel chooses which tags will respond to this reader's Query command. Session chooses the tag session where to send the Query command for the inventory round. Target chooses whether the tags with flag A or with flag B should take part in the inventory round. Q is a very important parameter, since it specifies the number of slots in the current round. The CRC field is a 5 bit error checking code, shorter than other CRCs because the RFID frames are shorter than in other technologies. The other commands will have a similar format to his one. [5].
 
 ## Materials
+
 ## Procedure
+
 ### Electric Circuit
+
 ### Software
+
 ### Communication
 
+
 ## Results & Analysis
+
 ## Conclusion
+Nowadays, the use of Radio Frequency Identification (RFID) is finding its place in several different applications and social contexts. The low cost and convenience of RFID tags is helping the market integrate these systems in places from package identification, security tags, personnel accessing ID, and even public transport. 
+
+In this low-power demanding world, RFID systems can be easily developed and implemented. Here, we implemented a simple and understandable way to read and write data into our own tag. The RFID module allowed us to create the bases of a whole RFID system, that can grow and become as simple or complex as our necessities require. 
+
 ## References
 [1] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+
 [2] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 327-328). 
+
 [3] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+
 [4] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 329).
+
 [5] EPC Global Standard
