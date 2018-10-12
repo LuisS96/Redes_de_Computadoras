@@ -1,6 +1,8 @@
 # Wireless Communication System using WiFi
 Made by @Fernando_Cortez, @Felix_Quevedo, and @Luis_Serrano
 
+fernando.cortez@cetys.edu.mx, felixs@cetys.edu.mx, and luis.serrano@cetys.edu.mx
+
 Subject: **Computer Network**
 
 Professor: **Dr. Moises Sanchez Adame**
@@ -248,7 +250,7 @@ BUFFER_SIZE = 1024
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Creates TCP socket
 s.connect((TCP_IP, TCP_PORT)) #Attaches the socket with the server address
 while 1:
-	  data = "data"
+	  data = "Hello World"
 	  s.send(data) #Sends data to the client
 	  data_recv = s.recv(BUFFER_SIZE) #Receives data from the client
 	  print data_recv
@@ -265,7 +267,7 @@ Hello World!
 
 - **Server**
 ```
-Hi
+Acknowledge of data received
 ```
 
 With these two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
@@ -276,6 +278,6 @@ The use of WiFi is easy, we never think or question how data is sent from one de
 If you make a Standalone Network and follow the instructions as they are, it will be configured in minutes, however, one must understand how it works, not only because one can understand better when an error is shown but because the configurations to make a WLAN are huge and the ones that are placed here are the minimum ones to create one.
 
 ## References
-Public.cnrood.com. (2013). Wi-Fi: Overview of the 802.11 Physical Layer and Transmitter Measurements. [en linea] Disponible en: https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf [Accesado el 12 de octubre de 2018].
+Public.cnrood.com. (2013). Wi-Fi: Overview of the 802.11 Physical Layer and Transmitter Measurements. [online] Available in: https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf [Access 12 Oct. 2018].
 
 Tanenbaum, A., Wetherall, D. (2011). Computer Networks. 
