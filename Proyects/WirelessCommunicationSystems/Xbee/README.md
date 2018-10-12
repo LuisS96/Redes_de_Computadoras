@@ -100,8 +100,27 @@ JV, MY
 ### Software
 ### Communication
 
-## Results & Analysis
-## Conclusion
+```
+ INSERTAR CODIGOS #1
+```
+
+```
+ INSERTAR CODIGOS #2
+```
+
+## Results and Analysis
+Once both of the XBee devices are correctly configured, it is time to connect the into separate Raspberry Pi. As the two codes start running, the link between the the coordinator and the end device will be stablished and an endpoint ID will be assigned. After this, the communication starts to occur.
+```
+When the Client connects its socket to the host, the message Hello World! is sent. At this time, the Server print the received data as:
+received [Hello World!]
+```
+Clearly, communication takes place between our XBee devices. 
+
+## Conclusions
+As we can see, ZigBee/XBee technology makes use of several attributes of 802.15.4 environment. However, it is its own environment and it must be treated as an important contribution to the wireless communication spectrum.
+
+There are limited real life systems that actually incorporate ZigBee/XBee technology. This might be center at the fact that more powerful and evolved forms of communication are commonly used (such as WiFi or Bluetooth). Despite this, ZigBee/XBee technology is not obsolete; it is growing and developing. We can contribute its development, creating systems of our own and taking advantage of its characteristics.
+
 ## References
 [1] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
 
