@@ -133,9 +133,9 @@ received [Hello World!]
 Clearly, Bluetooth communication takes place between our devices. 
 
 ## Conclusions
-As we can see, the Bluetooth technology has taken place in our daily lifes, from almost every cellphone to gadgets like keyboards or mouses. Here, we recreated the most simple communication between devices; this code can be imporved to create more extensive and complex communication. From controlling a simple LED to transmitting real-time audio files. The possibilities of improvemente are at our reach.
+As we can see, the Bluetooth technology has taken place in our daily life, from almost every cellphone to gadgets like keyboards or mouses. Here, we recreated the most simple communication between devices; this code can be improved to create more extensive and complex communication. From controlling a simple LED to transmitting real-time audio files. The possibilities of improvement are at our reach.
 
-It is important to emphasize that this technology is not perfect, security and communication issues can occurr at any time. However this is an evolving topic, solutions and improvements are implemented with each released version.
+It is important to emphasize that this technology is not perfect, security and communication issues can occur at any time. However this is an evolving topic, solutions and improvements are implemented with each released version.
 
 ## References
 https://ecee.colorado.edu/~ecen4242/marko/Bluetooth/Bluetooth/SPECIFICATION/RFCOMM.htm
