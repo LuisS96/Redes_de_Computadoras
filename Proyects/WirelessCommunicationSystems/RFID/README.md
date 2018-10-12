@@ -1,8 +1,8 @@
 # Wireless Communication System using RFID
 ## Abstract
+In the following document, the wireless communication system Radio Frequency Identification (RFID) will be explained and how this technology works and configured.
 
 ## Objective
-
 Establish a connection between a transmitter and a receiver by building a wireless communication system using RFID.
 
 ## Theoretical Framework
@@ -15,6 +15,12 @@ RFID systems consist of three components: a scanning antena, a transreceiver and
 An RFID network then consists of a group of readers and tags that will communicate with each other, with the restriction that readers can only communicate to tags and they only respond to the raeader's commands and queries. Tags cannot communicate between them, and multiple readers may try to communicate to a subset of the tags another reader is interacting with. Another problem is how to manage low power consumption communication with the tags since they harness their power from RF signals. Both situations are solved with the protocols RFID use as it will be explained in detail. [2]
 
 ### Protocols
+#### EPC Radio-Frequency Identity Protocol
+This protocol defines the physical and logical requirements for a Radio Frequency Identification (RFID) system operating in the 860 MHz - 960 MHz frequency range. The system is composed by Readers and Tags.
+
+The Reader transmits information to a Tag by modulating an RF signal in the frequencies range mentioned before. The Tag receives both information and operating energy from the RF signal.
+
+The Reader receives information from a Tag by transmitting a continuous-wave (CW) signal to the Tag; the Tag responds by modulating the reflection ocoefficient of its antenna. The system is ITF, meaning that a Tag modulates its antenna reflection with an information signal only after being directed by the Reader.
 
 ### Physical Layer
 The RFID physical layer defines how bits are sent between tags and readers. There are three main type of RFID systems: LF RFID (low frequency) which range from 30 kHz to 500 kHz; HF RFID (high frequency) whose frequency band is delimited from 3 MHz to 30 MHz; UHF RFID with a frequency set going from 300 MHz to 960 MHz. The distance range depends on the frequency type implemented. LF can transmit from a couple of inches to less than six feet; HF can go to more feet distance; finally, UHF can be read from more than 25 feet away. [3]
