@@ -63,17 +63,19 @@ The frame format that Bluetooth technology uses can be separated in two forms: t
 If the frame is sent at a basic data rate, the rest of the frame is dedicated to the data package. It can carry up to 2744 bits for a five slot transmission. However, if the data is sent at an enhanced rate, the next 16 bits are use as a guard field and a synchronization pattern to switch into the faster data rate, which can carry two or three symbols per bit, allowing up to 8184 bits of data. This enhanced-frame ends with a two bit trailer.
 
 #### Bluetooth Network Encapsulation Protocol (BNEP)
-![BNEP Frame Structure](https://www.ahirlabs.com/wp-content/uploads/2017/12/Frameformat.png)
+![BNEP Frame Structure](https://raw.githubusercontent.com/LuisS96/Redes_de_Computadoras/feature/Bluetooth/Proyects/WirelessCommunicationSystems/Bluetooth/Bluetooth_Frame_Format.png)
 
-- Access Code: used for timing synchronization, offset, paging, and inquiry
-- Header
-  - Addr: Temporary address assigned
-  - Type: Type of Packet
-  - F (FLOW): Flow Control
-  - A (ACK): Acknowledge (ACK)
-  - S (SEQN): Contains sequence number for packet ordering 
-  - Checksum: Error check
-- Data: Contains the data of the client
+The contents of the frame and their respective names and number of bits are descrived below. This is exclusivo for the basic data rate frame.
+
+- Access Code (72 bits): used for timing synchronization, offset, paging, and inquiry
+- Header (54 bits)
+  - Addr (3 bits): Temporary address assigned
+  - Type (4 bits): Type of Packet
+  - F (FLOW) (1 bit): Flow Control
+  - A (ACK) (1 bit): Acknowledge (ACK)
+  - S (SEQN) (1 bit): Contains sequence number for packet ordering 
+  - Checksum (8 bits): Error check
+- Data (0-2744 bits): Contains the data of the client
 
 #### RFCOMM
 ![RFCOMM Frame Structure](https://image.slidesharecdn.com/presentation1-161027145507/95/bluetooth-14-638.jpg?cb=1477580222)
