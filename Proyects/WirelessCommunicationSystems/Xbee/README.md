@@ -41,9 +41,10 @@ This layer consist of a library of functions that can be used in application pro
 Here, in the application framework, a single Endpoint ID is assigned. Also, an API environment is provided to ZigBee application developers.
 
 ### Physical Layer
-
+REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
 ### MAC Sublayer Protocol
+REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE X2
 
 ### Frame Structure
 In the ZigBee technology, the frames are transported as 802.15.4 payload. This format is illustrated as follows:
