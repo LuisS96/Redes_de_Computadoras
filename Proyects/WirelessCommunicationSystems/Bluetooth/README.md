@@ -77,16 +77,6 @@ The contents of the frame and their respective names and number of bits are desc
   - Checksum (8 bits): Error check
 - Data (0-2744 bits): Contains the data of the client
 
-#### RFCOMM
-![RFCOMM Frame Structure](https://image.slidesharecdn.com/presentation1-161027145507/95/bluetooth-14-638.jpg?cb=1477580222)
-- Flag: Let knows where it starts (01111101)
-- Address - 1 byte
-- Control - 1 byte
-- Length Indicator - 1 to 2 bytes
-- Data
-- FCS (Frame Check Sequence) - 1 byte
-- Flag: Let knows ehre it ends (01111101)
-
 ## Equipment and Material
 - Two Raspberry Pi 3 Model B+
 - One protoboard
