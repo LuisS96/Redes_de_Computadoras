@@ -51,6 +51,7 @@ For this application, Python was used. It was necessary to install the serial mo
 sudo apt-get install python-serial
 ```
 
+### Communication
 Afterwarads, create a Python script called Transmitter.py that includes the following lines:
 ```
 #!usr/bin/env python
@@ -81,12 +82,13 @@ while True:
   received = ser.readline().strip()
   print 'Received: ' + received
 ```
-
-Afterwards
-### Communication
+Afterwards run each script as a super user to see the XBees communicate. It doesn't matter if the Commander or the End Device behave as the transmitter or receiver; both can send and receive characters of informtion.
 
 ## Results & Analysis
+The transmission between both XBees tends to have a delay if a timeout is specified for the receiving XBee, but if no timeout is given, the Receiver gets the data almost instantaneously after the Commander sends it. 
+
 ## Conclusion
+
 ## References
 [1] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
 
