@@ -9,6 +9,7 @@ Professor: **Dr. Moises Sanchez Adame**
 University: **CETYS University, Tijuana**
 
 #### Abstract
+In the following document, the basics of Bluetooth technology will be explained and implemented between two devices. The architecture and frame structure will be presented and some cde will be written in order to trasnmit a simple string.
 
 ## Objective
 Establish a wireless communication using Bluetooth between a transmitter and a receptor to control a process.
