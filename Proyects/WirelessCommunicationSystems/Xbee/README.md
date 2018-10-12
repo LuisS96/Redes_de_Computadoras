@@ -13,13 +13,19 @@ The typical ZigBee architecture can be organized in seven distinct layers, where
 
 The 802.15.14 standard provides 16 channels on the 2.4GHz band, these channels are numbered from 11 to 26. Since ZigBee only uses the nonbeacon-enabled mode of 802.15.4, there is no possibility to access the network in a deterministically mode nor to reserve bandwidth. Furthermore, ZigBee restricts PAN IDs in the range of 0x0000 to 0x3FFF; this is only a subset of the 802.15.4 range.
 
-ZigBee Node Types
+#### ZigBee Node Types
 
--End Device 
+- ZigBee End Device (ZED):
 
--Router
+  This node is designed with a battery operated life, usually with a low duty cycle. This implies that this device spends most of its time in a sleep state, and must join a network trough a router node.  
 
--Coordinator
+- ZigBee Router (ZR):
+
+  This node acts as packet router, and must be permanently listening once they join a network.
+
+- ZigBee Coordinator (ZC):
+
+  ZigBee Coordinator are able to create a network or join one, if they join one, they act as a ZigBee router. These devices contain the trust center, which is responsible of management of security keys and the admission or declination of new nodes.
 
 ### Protocols
 
