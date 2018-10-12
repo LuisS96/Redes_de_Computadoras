@@ -53,6 +53,9 @@ TCP is mainly used when using the internet such as the World Wide Web (WWW), Fil
 - DHCP (Dynamic Host Configuration Protocol)
 Provides the Access Point's clients with IP addresses to be able to communicate with other hosts. 
 
+- IEEE 802.11
+A set of Media Access Control (MAC) and physical later specifications for implementing a WLAN communication in the 900 MHz and 2.4, 5, and 60 GHz frequency bands. These are widely used to allow devices to talk with each other and access the internet without being wired.
+
 ### Physical Layer
 ### MAC Sublayer Protocol
 ### Frame Structure
