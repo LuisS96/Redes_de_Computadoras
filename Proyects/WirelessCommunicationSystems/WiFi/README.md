@@ -256,7 +256,19 @@ s.close() #Closes the connection through the socket
 ```
 
 ## Results and Analysis
+After making the two devices start their python scripts running, starting from the server and later the client. Both Raspberry Pis established the connection and began transmitting and receiving messages from one another, therefore, the message received was:
 
+- **Client**
+```
+Hello World!
+```
+
+- **Server**
+```
+Hi
+```
+
+With this two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
 
 ## Conclusions
 
