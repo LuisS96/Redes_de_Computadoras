@@ -91,7 +91,7 @@ Defines power management, security and roaming services.
 
 
 ## Equipment and Material
-- Raspberry Pi 3 Model B+ (2 units).
+- **Raspberry Pi 3 Model B+ (2 units).** 
 The Raspberry Pi 3 Model B+ have an integrated WiFi Module.
 
 ## Development
