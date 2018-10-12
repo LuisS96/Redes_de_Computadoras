@@ -268,7 +268,7 @@ Hello World!
 Hi
 ```
 
-With this two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
+With these two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
 
 ## Conclusions
 
