@@ -270,8 +270,10 @@ Hi
 
 With these two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
 
-## Conclusions
+## Conclusion
+The use of WiFi is easy, we never think or question how data is sent from one device to another, although we normally use a Wireless LAN daily for our laptops or mobile devices to connect and communicate with each other. Nonetheless, the configuration to make a packet to be sent and received is not as easy as it might look.
 
+If you make a Standalone Network and follow the instructions as they are, it will be configured in minutes, however, one must understand how it works, not only because one can understand better when an error is shown but because the configurations to make a WLAN are huge and the ones that are placed here are the minimum ones to create one.
 
 ## References
 https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf
