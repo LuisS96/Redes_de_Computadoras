@@ -90,7 +90,51 @@ Defines access mechanisms and packets formats
 Defines power management, security and roaming services.
 
 ### Frame Structure
+![802.11g Packet Format](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211_packetFormat.png)
 
+- **Preamble**
+  - **Short Training Field (STF)**: Inital timing sync and frequency estimate.
+
+  - **Long Training Field (LTF)**: Fine timeing and frequency sync, and channel response estimation.
+
+  - **Signal**
+    - **Rate**: Indicates data FEC coding and modulation.
+    - **Length**: Number of octets carried in payload.
+    - **Parity**: Even parity-check on Rate + Length data.
+    - **Tail**: Used for Signal symbol FEC decoding
+- **Payload**
+Data subcarriers use BPSK, QPSK, or 64QAM modulation.
+
+#### Sub-fields
+- **Protocol Version**
+Represent the protocol version.
+
+- **Type**
+Type of WLAN frame. Control, Data and Management, as examples.
+
+- **Sub Type**
+Provides addition discrimination between frames.
+
+- **ToDS and FromDS**
+They indicate whether a data frame is headed for a distribution system.
+
+- **More Fragments**
+For when a packet is divided into multiple frames for transmission.
+
+- **Retry**
+When a frame requires retransmission.
+
+- **Power Management**
+State of the sender after the completion of a frame exchange.
+
+- **More Data**
+Used to buffer frames received in a distributed system.
+
+- **WEP**
+Toggled to one after a frame has been decrypted or if no encryption is set will have already been one.
+
+- **Order**
+Set when the strict ordering delivery method is employed.
 
 ## Equipment and Material
 - **Raspberry Pi 3 Model B+ (2 units).** 
