@@ -79,6 +79,11 @@ In the ZigBee technology, the frames are transported as 802.15.4 payload. This f
 * XCTU software installed from https://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu
 
 ## Procedure
+### Electric Circuit
+The electric circuit implemented was simple, since it only consists of two raspberry pi, with one USB XBee explorer and an XBee connected to each Raspberry PI.
+
+### Software
+#### XBee Configuration
 Insert both XBee to the XBee explorers and connect them to the COM ports of your computer. Open the XCTU software and press the upper left magnifying glass button to discover the XBee devices connected to the computer. Select all COM ports and keep pressing "Next" with the default parameters to find the devices, and add them. Click on on of the devices from the left side list to open its configuration panel on the right. There are some parameters to be modified in XCTU to enable communication between both XBees, such as the PAN ID, Channel, Destination Address and Coordinator Mode. There is an extra parameter that changes depending on the model of the Xbees. First, the common parameters for all models will be explained:
 
 For the Coordinator XBee:
@@ -93,31 +98,53 @@ For the End Device/Router XBee:
 * Coordinator Mode is disabled
 * Destination Address Low is 0 (Point to network's coordinator).
 
-JV, MY
+For models S1 and S1 Pro the extra parameter to configure is Source Address Bits MY. For the Coordinator XBee, MY = 0; on the other hand, for the End Device/Router XBee, MY = 1. Instead, if other model is used, the parameter to be modified is Channel Verifiction JV. In the case of the End Point, it is equal to 1, and with the Coordinator is 0. 
 
+#### Raspberry PI Setup
+For this application, Python was used. It was necessary to install the serial module of the language in order to be able to write to and read from the serial USB ports of the Raspberry PI. To install it, type 
 
-### Electric Circuit
-### Software
+```
+sudo apt-get install python-serial
+```
+
 ### Communication
-The communication between modules is achieved with the following python code. An important aspect to consider while developing the code is that the two modules are configured to be a certain type of node, one a coordinator and the other as an end point.
+Afterwarads, create a Python script called Transmitter.py that includes the following lines:
 
-The first module, the coordinator is controlled via USB adapter connected to a Raspberry Pi, wich itself has the following code:
+![Python version](https://img.shields.io/badge/python-v2.7-brightgreen.svg)
+
 ```
- INSERTAR CODIGOS #1 Coordinator
+#!usr/bin/env python
+
+import serial
+import time
+
+ser = serial.Serial('\dev\ttyUSB0', 9600)
+text = 'Hello\n'
+print 'Starting serial connection'
+
+while True:
+  ser.write(text)
+  print 'Saying: ' + text
 ```
 
-In the other hand, we have the end point module. Just as before, this is connected to a Raspberry Pi via a second USB adapter. This second module is controlled with the following code:
+In the other PI, create a Python script called Receiver.py that has the following code:
 ```
- INSERTAR CODIGOS #2 End Point
-```
+#!usr/bin/env python
 
-## Results and Analysis
-Once both of the XBee devices are correctly configured, it is time to connect the into separate Raspberry Pi. As the two codes start running, the link between the the coordinator and the end device will be stablished and an endpoint ID will be assigned. After this, the communication starts to occur.
+import serial
+import time
+
+ser = serial.Serial('\dev\ttyUSB0', 9600, timeout = 3)
+print 'Starting serial connection'
+
+while True:
+  received = ser.readline().strip()
+  print 'Received: ' + received
 ```
-When the Client connects its socket to the host, the message Hello World! is sent. At this time, the Server print the received data as:
-received [Hello World!]
-```
-Clearly, communication takes place between our XBee devices. 
+Afterwards run each script as a super user to see the XBees communicate. It doesn't matter if the Commander or the End Device behave as the transmitter or receiver; both can send and receive characters of informtion.
+
+## Results & Analysis
+The transmission of the `text` variable in the Transmitter.py code is reflected in the receiving PI. The transmission between both XBees tends to have a delay if a timeout is specified for the receiving XBee, but if no timeout is given, the Receiver gets the data almost instantaneously after the Commander sends it. 
 
 ## Conclusions
 As we can see, ZigBee/XBee technology makes use of several attributes of 802.15.4 environment. However, it is its own environment and it must be treated as an important contribution to the wireless communication spectrum.
