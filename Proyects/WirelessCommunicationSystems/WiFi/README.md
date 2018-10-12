@@ -37,7 +37,7 @@ Devices that want to communicate with others and that can connect with an AP via
 - **Bridge**
 A connector used to esblish a connection between wired networks and wireless networks.
 
-![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/tcp_udp/Proyects/TCP_UDP/WiFi_RaspberryPi.png)
+![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/WiFi_RaspberryPi.png)
 
 ### Protocols
 - IP address (Internet Protocol address)
