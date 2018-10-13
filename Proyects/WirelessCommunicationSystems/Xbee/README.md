@@ -1,4 +1,8 @@
 # Wireless Communication System using Xbee
+
+
+fernando.cortez@cetys.edu.mx, felixs@cetys.edu.mx, and luis.serrano@cetys.edu.mx
+
 ## Abstract
 In the following document, the basics of ZigBee/XBee communication technology will be presented and the theoretical knowledge will be used to create a local XBee network between a Coordinator and an End Point. 
 
