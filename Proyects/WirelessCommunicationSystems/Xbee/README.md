@@ -85,14 +85,17 @@ In the ZigBee technology, the frames are transported as 802.15.4 payload. This f
 * 2 Raspberry PIs with Raspbian installed and Internet access
 * XCTU software installed from https://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu
 
+<img src="https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/Zigbee/Proyects/WirelessCommunicationSystems/Xbee/XBee.png" width="400" />
+<img src="https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/Zigbee/Proyects/WirelessCommunicationSystems/Xbee/XBee%20_Explorer.png" width="400" />
+
 ## Procedure
+The procedure was followed according to the steps presented in [8] and [9].
+
 ### Electric Circuit
 The electric circuit implemented was simple, since it only consists of two raspberry pi, with one USB XBee explorer and an XBee connected to each Raspberry PI.
 
 ### Software
-
 #### XBee Configuration
-
 Insert both XBee to the XBee explorers and connect them to the COM ports of your computer. Open the XCTU software and press the upper left magnifying glass button to discover the XBee devices connected to the computer. Select all COM ports and keep pressing "Next" with the default parameters to find the devices, and add them. Click on on of the devices from the left side list to open its configuration panel on the right. There are some parameters to be modified in XCTU to enable communication between both XBees, such as the PAN ID, Channel, Destination Address and Coordinator Mode. There is an extra parameter that changes depending on the model of the Xbees. First, the common parameters for all models will be explained:
 
 For the Coordinator XBee:
@@ -174,3 +177,7 @@ There are limited real life systems that actually incorporate ZigBee/XBee techno
 [6] Hersent, O., Boswarthick, D., & Elloumi, O. (2011). The internet of things : key applications and protocols. Retrieved from https://ebiblio.cetys.mx:4153
 
 [7] Eady, F. (2010). Hands-on zigbee : implementing 802. 15. 4 with microcontrollers. Retrieved from https://ebiblio.cetys.mx:4153
+
+[8] Internet de las Cosas, (2015). Creando un Servidor Raspberry Pi – XBee en python y conectando un Cliente Arduino – XBee. Recovered from: https://www.internetdelascosas.cl/2015/05/31/creando-un-servidor-raspberry-pi-xbee-en-python-y-conectando-un-cliente-arduino-xbee/
+
+[9] Alselectro, (2017). ZIGBEE XBEE S2C–How to configure as Coordinator, Router / End Device. recovered from: https://alselectro.wordpress.com/2017/01/23/zigbee-xbee-s2c-how-to-configure-as-coordinator-router-end-device/
