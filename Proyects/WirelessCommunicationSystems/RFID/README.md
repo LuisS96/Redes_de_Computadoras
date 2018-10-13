@@ -55,7 +55,7 @@ The first four bits of all reader messages specify the command type, in this cas
 ### Electric Circuit
 The pinout of the MFRC522 chip to the Raspberry PI is the following:
 
-![GitHub Logo](/RFID-Diagram.png)
+![RFID Main Logo](/RFID-Diagram.png)
 
 * **SDA** connects to **Pin 24**.
 * **SCK** connects to **Pin 23**.
