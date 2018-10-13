@@ -2,6 +2,8 @@
 
 Made by @Fernando_Cortez, @Felix_Quevedo, and @Luis_Serrano
 
+fernando.cortez@cetys.edu.mx, felixs@cetys.edu.mx, and luis.serrano@cetys.edu.mx
+
 Subject: **Computer Network**
 
 Professor: **Dr. Moises Sanchez Adame**
