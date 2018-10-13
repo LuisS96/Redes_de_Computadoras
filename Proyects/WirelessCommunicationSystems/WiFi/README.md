@@ -278,6 +278,6 @@ The use of WiFi is easy, we never think or question how data is sent from one de
 If you make a Standalone Network and follow the instructions as they are, it will be configured in minutes, however, one must understand how it works, not only because one can understand better when an error is shown but because the configurations to make a WLAN are huge and the ones that are placed here are the minimum ones to create one.
 
 ## References
-Public.cnrood.com. (2013). Wi-Fi: Overview of the 802.11 Physical Layer and Transmitter Measurements. [online] Available in: https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf [Access 12 Oct. 2018].
+[1] Public.cnrood.com. (2013). Wi-Fi: Overview of the 802.11 Physical Layer and Transmitter Measurements. [online] Available in: https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf [Access 12 Oct. 2018].
 
-Tanenbaum, A., Wetherall, D. (2011). Computer Networks. 
+[2] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. 
