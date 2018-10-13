@@ -1,6 +1,8 @@
 # Wireless Communication System using WiFi
 Made by @Fernando_Cortez, @Felix_Quevedo, and @Luis_Serrano
 
+fernando.cortez@cetys.edu.mx, felixs@cetys.edu.mx, and luis.serrano@cetys.edu.mx
+
 Subject: **Computer Network**
 
 Professor: **Dr. Moises Sanchez Adame**
@@ -8,7 +10,7 @@ Professor: **Dr. Moises Sanchez Adame**
 University: **CETYS University, Tijuana.**
 
 #### Abstract
-
+In the following document, it is explained how WiFi as a wireless communication system works and the way on how it was implemented between two wireless devices.
 
 ## Objective
 Establish a wireless communication using WiFi between a transmitter and a receptor to control a process.
@@ -16,32 +18,131 @@ Establish a wireless communication using WiFi between a transmitter and a recept
 ## Theoretical Framework
 
 ### Architecture
-![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/tcp_udp/Proyects/TCP_UDP/WiFi_RaspberryPi.png)
+#### Types
+- **Infrastructure**
+The infrastructure is made by any device that can communicate with a work station through a wireless Local Area Network (LAN) or WiFi, this can only be done with an access point.
+
+- **Ad hoc Network**
+Any obstacle there can be between work stations that are linked together are referred as ad hocs.
+
+- **Mixed Network**
+A mixed network is developed when an infrastructure and an ad hoc network are combined, working simultaneously within.
+
+#### Components
+To create a network, components are needed, these are:
+- **Access Point**
+A type of routing device that can transmit and receive data using wireless networking. This devices have a limit of devices that can have access to the network.
+
+- **Clients**
+Devices that want to communicate with others and that can connect with an AP via the AP network.
+
+- **Bridge**
+A connector used to esblish a connection between wired networks and wireless networks.
+
+![WiFi Communication Between Two Raspberry](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/WiFi_RaspberryPi.png)
+
 ### Protocols
-- IP address (Internet Protocol address)
+- **IP address (Internet Protocol address).**
 Sets a direction for packets to be delivered from the source host to the destination host. The packets are encapsulated for the data to be delivered. It first started as a connectionless datagram service now named User Datagram Protocol(UDP), now it is a connection-oriented Transmission Control Protocol (TCP).
 
 The version used is IPv4 represented in the dot-decimal notation with a 32-bit integer value, IPv4 has runned out making of its successor IPv6 using 128-bit address represented as eight groups of four hexadecimal digits, providing approximately 4.3 billion addresses, 7.9 x 10^28 times as many as IPv4.
 
-- TCP (Transmission Control Protocol)
+- **TCP (Transmission Control Protocol)**
 Provides a reliable communication through a connection-oriented service between the server and the client, also known as a host-to-host connectivity at the transport layer of the TCP/IP model. This layer checks for data errors and provides the mechanisms to request retransmission of the lost data, therefore it guarantees that all the data received is correct and in order by keeping track of the 'segments'.
 
 TCP is mainly used when using the internet such as the World Wide Web (WWW), File Transfer Protocol (FTP), Secure Shell, etc.
 
-- DHCP (Dynamic Host Configuration Protocol)
+- **DHCP (Dynamic Host Configuration Protocol)**
 Provides the Access Point's clients with IP addresses to be able to communicate with other hosts. 
 
-### Physical Layer
-### MAC Sublayer Protocol
-### Frame Structure
+- **IEEE 802.11**
+A set of Media Access Control (MAC) and Physical Layer (PHY) specifications for implementing a WLAN communication in the 900 MHz and 2.4, 5, and 60 GHz frequency bands. These are widely used to allow devices to talk with each other and access the internet without being wired.
+  - **Othogonal Frequency-Division Multiplexing (OFDM)**
+  Method of encoding digital data on multiple carrier frequencies.
+  
+![802.11g Bandwidth channels](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211g_bandwidth.png)
 
+
+### Physical Layer
+The Physical layer defines the specifications for devices. It defines the relationship between a device and a transmission medium.
+
+The PHY layer functions and services are:
+- Establishment and termination of a connection to a medium.
+- Participation in the process where the communication resources are effectively shared.
+- Modulation or conversion between the representation of digital data in user equipment and the signals transmitted over a channel.
+
+#### Sublayers
+- **The Physical Layer Convergence Procedure (PLCP)** acts as an adaptation later.
+
+- **The Clear Channel Assessment (CCA)** mode and building packets for different PHY technologies in which the PLCP is responsible for.
+
+- **The Physical Medium Dependent (PMD)** specifies modulation and coding techniques. The PHY management layer takes care of the management issues.
+
+The station management sub layer is responsible for co-odination of interaction between the Data Link Layer (DLL) and the PHY layers.
+
+### MAC Sublayer Protocol
+The MAC sub-layer provides the functional and procedural means to transfer data between network clients to detect errors that may occur on the physical layer, and possibly correct them. 
+
+It also provides access to contention based and contention free traffic on different kinds of physical layers. The responsiblities in this layer are divided into:
+
+- **MAC sub-layer**
+Defines access mechanisms and packets formats
+
+- **MAC management sub-layer**
+Defines power management, security and roaming services.
+
+### Frame Structure
+![802.11g Packet Format](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211_packetFormat.png)
+
+- **Preamble**
+  - **Short Training Field (STF)**: Inital timing sync and frequency estimate.
+
+  - **Long Training Field (LTF)**: Fine timeing and frequency sync, and channel response estimation.
+
+  - **Signal**
+    - **Rate**: Indicates data FEC coding and modulation.
+    - **Length**: Number of octets carried in payload.
+    - **Parity**: Even parity-check on Rate + Length data.
+    - **Tail**: Used for Signal symbol FEC decoding
+- **Payload**
+Data subcarriers use BPSK, QPSK, or 64QAM modulation.
+
+#### Sub-fields
+- **Protocol Version**
+Represent the protocol version.
+
+- **Type**
+Type of WLAN frame. Control, Data and Management, as examples.
+
+- **Sub Type**
+Provides addition discrimination between frames.
+
+- **ToDS and FromDS**
+They indicate whether a data frame is headed for a distribution system.
+
+- **More Fragments**
+For when a packet is divided into multiple frames for transmission.
+
+- **Retry**
+When a frame requires retransmission.
+
+- **Power Management**
+State of the sender after the completion of a frame exchange.
+
+- **More Data**
+Used to buffer frames received in a distributed system.
+
+- **WEP**
+Toggled to one after a frame has been decrypted or if no encryption is set will have already been one.
+
+- **Order**
+Set when the strict ordering delivery method is employed.
 
 ## Equipment and Material
-
+- **Raspberry Pi 3 Model B+ (2 units).** 
+The Raspberry Pi 3 Model B+ have an integrated WiFi Module.
 
 ## Development
-
-### Electrical Circuit
 ### Software
 #### Access Point
 A Raspberry Pi was set up as an Access Point in a standalone network (NAT) to develop the task. To set up the Raspberry Pi, the following instructions where made.
@@ -63,7 +164,7 @@ Yet, a standalone network needs to be configured for the Raspberry Pi to act as 
 The dhcpcd file needs to be configured with the static IP Address `/etc/dhcpcd.conf` and at the end of the file edit it with the following:
 ```
 interface wlan0
-  static ip_address=10.0.0.1/24
+  static ip_address=192.168.1.1/24
   nohook wpa_supplicant # Not to be run when the Raspberry Pi is initialized
 ```
 
@@ -72,7 +173,7 @@ The interface `wlan0` is usually used when using the Raspberry Pi module, if a U
 The DHCP server, provided by dnsmasq has to be configured.
 ```
 interface wlan0 # Interface in use
-  dhcp-range=10.0.0.2,10.0.0.10,255.255.255.0,24h
+  dhcp-range=1192.168.1.2,192.168.1.10,255.255.255.0,24h
 ```
 A range of IP addresses is configured that intended to be provided, it could go up to `10.0.0.254`, the netmask is also set according to our network class and a lease time of 24 hours (optional).
 
@@ -142,14 +243,14 @@ connection.close() #When finished, connection with the client is closed
 ```
 import socket
 
-TCP_IP = '10.0.0.1' #IP Address of the server
+TCP_IP = '192.168.1.1' #IP Address of the server
 TCP_PORT = 5005 #Port used
 BUFFER_SIZE = 1024
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Creates TCP socket
 s.connect((TCP_IP, TCP_PORT)) #Attaches the socket with the server address
 while 1:
-	  data = "data"
+	  data = "Hello World"
 	  s.send(data) #Sends data to the client
 	  data_recv = s.recv(BUFFER_SIZE) #Receives data from the client
 	  print data_recv
@@ -157,9 +258,26 @@ s.close() #Closes the connection through the socket
 ```
 
 ## Results and Analysis
+After making the two devices start their python scripts running, starting from the server and later the client. Both Raspberry Pis established the connection and began transmitting and receiving messages from one another, therefore, the message received was:
 
+- **Client**
+```
+Hello World!
+```
 
-## Conclusions
+- **Server**
+```
+Acknowledge of data received
+```
 
+With these two messages, one from the client and the acknowledge from the server, is how we know that our messages are not only sent but received correctly as it should.
+
+## Conclusion
+The use of WiFi is easy, we never think or question how data is sent from one device to another, although we normally use a Wireless LAN daily for our laptops or mobile devices to connect and communicate with each other. Nonetheless, the configuration to make a packet to be sent and received is not as easy as it might look.
+
+If you make a Standalone Network and follow the instructions as they are, it will be configured in minutes, however, one must understand how it works, not only because one can understand better when an error is shown but because the configurations to make a WLAN are huge and the ones that are placed here are the minimum ones to create one.
 
 ## References
+Public.cnrood.com. (2013). Wi-Fi: Overview of the 802.11 Physical Layer and Transmitter Measurements. [online] Available in: https://public.cnrood.com/public/docs/WiFi_Physical_Layer_and_Transm_Meas.pdf [Access 12 Oct. 2018].
+
+Tanenbaum, A., Wetherall, D. (2011). Computer Networks. 
