@@ -90,7 +90,9 @@ In the ZigBee technology, the frames are transported as 802.15.4 payload. This f
 The electric circuit implemented was simple, since it only consists of two raspberry pi, with one USB XBee explorer and an XBee connected to each Raspberry PI.
 
 ### Software
+
 #### XBee Configuration
+
 Insert both XBee to the XBee explorers and connect them to the COM ports of your computer. Open the XCTU software and press the upper left magnifying glass button to discover the XBee devices connected to the computer. Select all COM ports and keep pressing "Next" with the default parameters to find the devices, and add them. Click on on of the devices from the left side list to open its configuration panel on the right. There are some parameters to be modified in XCTU to enable communication between both XBees, such as the PAN ID, Channel, Destination Address and Coordinator Mode. There is an extra parameter that changes depending on the model of the Xbees. First, the common parameters for all models will be explained:
 
 For the Coordinator XBee:
