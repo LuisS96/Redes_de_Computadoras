@@ -53,13 +53,83 @@ The first four bits of all reader messages specify the command type, in this cas
 ## Procedure
 
 ### Electric Circuit
+The pinout of the MFRC522 chip to the Raspberry PI is the following:
+
+![GitHub Logo](/RFID-Diagram.png)
+
+* **SDA** connects to **Pin 24**.
+* **SCK** connects to **Pin 23**.
+* **MOSI** connects to **Pin 19**.
+* **MISO** connects to **Pin 21**.
+* **GND** connects to **Pin 6**.
+* **RST** connects to **Pin 22**.
+* **3.3V** connects to **Pin 1**.
+
 
 ### Software
+First, install the python development tools if missing.
+```
+sudo apt-get install python2.7-dev
+```
+
+Then, the Python Py-PI module is added to the Raspberry.
+```
+cd ~
+git clone https://github.com/lthiery/SPI-Py.git
+```
+and then installed:
+```
+cd ~/SPI-Py
+sudo python setup.py install
+```
+
+Finally, clone the SimpleMFRC522 repository to use its module.
+```
+cd ~
+git clone https://github.com/pimylifeup/MFRC522-python.git
+```
 
 ### Communication
+Create a tag writer python script that has the following lines of code:
 
+```
+#!/usr/bin/env python
 
+import RPi.GPIO as GPIO
+import SimpleMFRC522
+
+reader = SimpleMFRC522.SimpleMFRC522()
+
+try:
+        text = raw_input('´Type the data you want to write to your tag: ')
+        print "Now place your tag to write"
+        reader.write(text)
+        print "Written"
+finally:
+        GPIO.cleanup()
+```
+
+And a tag reader python script:
+
+```
+#!/usr/bin/env python
+
+import RPi.GPIO as GPIO
+import SimpleMFRC522
+
+reader = SimpleMFRC522.SimpleMFRC522()
+
+try:
+        id, text = reader.read()
+        print(id)
+        print(text)
+finally:
+        GPIO.cleanup()
+```
+
+Run the writer as a super user to write a new string to your tag, and then run the reader script to see the contents of the tag (or card).
 ## Results & Analysis
+Running the writer code once and then the reader script gives the following result. No problems happened with the communication of the MFRC522 and the tag.
 
 ## Conclusion
 Nowadays, the use of Radio Frequency Identification (RFID) is finding its place in several different applications and social contexts. The low cost and convenience of RFID tags is helping the market integrate these systems in places from package identification, security tags, personnel accessing ID, and even public transport. 
@@ -67,12 +137,14 @@ Nowadays, the use of Radio Frequency Identification (RFID) is finding its place 
 In this low-power demanding world, RFID systems can be easily developed and implemented. Here, we implemented a simple and understandable way to read and write data into our own tag. The RFID module allowed us to create the bases of a whole RFID system, that can grow and become as simple or complex as our necessities require. 
 
 ## References
-[1] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+[1] Rouse, M. (2017). RFID (radio frequency identification). Recovered from: https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
 
 [2] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 327-328). 
 
-[3] https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
+[3] Rouse, M. (2017). RFID (radio frequency identification). Recovered from: https://internetofthingsagenda.techtarget.com/definition/RFID-radio-frequency-identification
 
 [4] Tanenbaum, A., Wetherall, D. (2011). Computer Networks. (pp. 329).
 
 [5] EPC Global Standard
+
+[6] PiMyLifeUp, (2017). How to setup a Raspberry Pi RFID RC522 Chip. Recovered from: https://pimylifeup.com/raspberry-pi-rfid-rc522/
