@@ -1,5 +1,5 @@
 # Wireless Communication System using Xbee
-
+Made by @Fernando_Cortez, @Felix_Quevedo, and @Luis_Serrano
 
 fernando.cortez@cetys.edu.mx, felixs@cetys.edu.mx, and luis.serrano@cetys.edu.mx
 
