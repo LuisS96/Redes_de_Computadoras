@@ -1,5 +1,6 @@
 # Wireless Communication System using Xbee
 ## Abstract
+In the following document, the basics of ZigBee/XBee communication technology will be presented and the theoretical knowledge will be used to create a local XBee network between a Coordinator and an End Point. 
 
 ## Objective
 Establish a connection between a transmitter and a receiver by building a wireless communication system using Xbee.
@@ -41,10 +42,12 @@ This layer consist of a library of functions that can be used in application pro
 Here, in the application framework, a single Endpoint ID is assigned. Also, an API environment is provided to ZigBee application developers.
 
 ### Physical Layer
-REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+The first two layers of the ZigBee technology are provided by the 802.15.4 protocols. In order to understand ZigBee, we must understand the physical and MAC layers.
 
-### MAC Sublayer Protocol
-REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE X2
+In 802.15.4, the physical channel that carries the data are radio frequencies. The operational channels are numbered from 11 to 26, and range from 2.4 GHz to 2.4835 GHZ, with a separation of 5 MHz between each channel. This layer is charge of encoding and decoding the data that must be received or transmitted.
+
+### MAC Sublayer
+The second layer in a ZigBee system is the MAC sublayer, this layer is dedicated to creating an stable interface between the upper layers and the physical layer. The synchronization of beacons, device security, and maintaining a reliable link are between the most  important duties of this layer.
 
 ### Frame Structure
 In the ZigBee technology, the frames are transported as 802.15.4 payload. This format is illustrated as follows:
