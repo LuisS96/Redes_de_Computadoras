@@ -60,7 +60,7 @@ A set of Media Access Control (MAC) and Physical Layer (PHY) specifications for 
   - **Othogonal Frequency-Division Multiplexing (OFDM)**
   Method of encoding digital data on multiple carrier frequencies.
   
-![802.11g Bandwidth channels](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211g_bandwidth.png)
+![802.11g Bandwidth channels](80211g_bandwidth.png)
 
 
 ### Physical Layer
@@ -92,7 +92,7 @@ Defines access mechanisms and packets formats
 Defines power management, security and roaming services.
 
 ### Frame Structure
-![802.11g Packet Format](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/WiFi/Proyects/WirelessCommunicationSystems/WiFi/80211_packetFormat.png)
+![802.11g Packet Format](80211_packetFormat.png)
 
 - **Preamble**
   - **Short Training Field (STF)**: Inital timing sync and frequency estimate.
