@@ -140,5 +140,6 @@ As we can see, the Bluetooth technology has taken place in our daily life, from 
 It is important to emphasize that this technology is not perfect, security and communication issues can occur at any time. However this is an evolving topic, solutions and improvements are implemented with each released version.
 
 ## References
-University of Colorado, (n.d.). RFCOMM Protocol. Recovered from: https://ecee.colorado.edu/~ecen4242/marko/Bluetooth/Bluetooth/SPECIFICATION/RFCOMM.htm
-Anonymous, (n.d.). RFCOMM with TS 07.10. Recovered from: https://www.bluetooth.org/docman/handlers/DownloadDoc.ashx?doc_id=263754
+[1] University of Colorado, (n.d.). RFCOMM Protocol. Recovered from: https://ecee.colorado.edu/~ecen4242/marko/Bluetooth/Bluetooth/SPECIFICATION/RFCOMM.htm
+
+[2] Anonymous, (n.d.). RFCOMM with TS 07.10. Recovered from: https://www.bluetooth.org/docman/handlers/DownloadDoc.ashx?doc_id=263754
