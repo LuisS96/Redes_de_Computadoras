@@ -10,7 +10,7 @@ Establish a connection between a transmitter and a receiver by building a wirele
 ### Architecture
 RFID systems consist of three components: a scanning antena, a transreceiver and a transponder or commonly called tag. The first two items are usually combined into a single artifact called a reader. Tags are generally composed of an antenna and memory only, so they don't have a battery or power source other than the power obtained by a carrier activation signal from the reader. [1]
 
-%%%%% INSERT IMAGE %%%%%%%%%%%%%%%%
+![RFID Architecture](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/RFID/Proyects/WirelessCommunicationSystems/RFID/RFID.jpg)
 
 An RFID network then consists of a group of readers and tags that will communicate with each other, with the restriction that readers can only communicate to tags and they only respond to the raeader's commands and queries. Tags cannot communicate between them, and multiple readers may try to communicate to a subset of the tags another reader is interacting with. Another problem is how to manage low power consumption communication with the tags since they harness their power from RF signals. Both situations are solved with the protocols RFID use as it will be explained in detail. [2]
 
@@ -39,7 +39,7 @@ Among other operations the reader can perform, there is the slot range adjustmen
 ### Frame Structure
 The frame structure and size depend on the type of message the reader wants to send to the tag, as well as the type of reply the tag will transmit back. The most common command, the Query command, has the following format:
 
-\includegraphics[width=8cm]{QueryCommandFrame.PNG}
+![Query Command Frame](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/RFID/Proyects/WirelessCommunicationSystems/RFID/Query%20Command%20Frame.PNG)
 
 The first four bits of all reader messages specify the command type, in this case, 1000 denotes a Query command. The next three parameters specify the physical layer parameters that modify the frequency link, data rate and modulation format, and pilot tone inclusion in reader-tag transmissions.   Sel chooses which tags will respond to this reader's Query command. Session chooses the tag session where to send the Query command for the inventory round. Target chooses whether the tags with flag A or with flag B should take part in the inventory round. Q is a very important parameter, since it specifies the number of slots in the current round. The CRC field is a 5 bit error checking code, shorter than other CRCs because the RFID frames are shorter than in other technologies. The other commands will have a similar format to his one. [5].
 
@@ -55,7 +55,7 @@ The first four bits of all reader messages specify the command type, in this cas
 ### Electric Circuit
 The pinout of the MFRC522 chip to the Raspberry PI is the following:
 
-![RFID Main Logo](/RFID-Diagram.png)
+![RFID Main Logo](https://github.com/LuisS96/Redes_de_Computadoras/blob/feature/RFID/Proyects/WirelessCommunicationSystems/RFID/RFID-Diagram.png)
 
 * **SDA** connects to **Pin 24**.
 * **SCK** connects to **Pin 23**.
