@@ -249,7 +249,51 @@ Now restart Postfix:
 service restart postfix
 ```
 
+Roundube Webmail will be installed for a better user interface, run the following code block:
+```
+apt-get -y install roundcube roundcube-core roundcube-mysql roundcube-plugins javascript-common libjs-jquery-mousewheel php-net-sieve tinymc
+```
+
+Answer the question as follows:
+```
+Configure database for roundcube with dbconfig-common? Yes
+MySQL application password for roundcube: (Press Enter)
+```
+
+Opem the RoundCube configuration file:
+```
+nano /etc/apache2/conf-enabled/roundcube.conf
+```
+
+Edit the file by removing the '#' in front of the Alias line and add the the next lines as follows:
+```
+# Those aliases do not work properly with several hosts on your apache server
+# Uncomment them to use it or adapt them to your configuration
+Alias /roundcube /var/lib/roundcube
+Alias /webmail /var/lib/roundcube
+...
+<Directory /var/lib/roundcube>
+AddType application/x-httpd-php .php
+...
+```
+
+Restart Apache:
+```
+service restart apache2
+```
+
+Edit the RoundCube config.inc.php configuration file:
+```
+nano /etc/roundcube/config.inc.php
+```
+
+And change the default host to localhost:
+```
+$config['default_host'] = 'localhost';
+```
+
 The mail server installation and configuration is complete!
+
 
 ### DBS Server
 #### Theory
