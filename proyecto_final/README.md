@@ -48,6 +48,140 @@ apt-get remove apparmor apparmor-utils
 #### Theory
 
 #### Installation Guide
+The install of Apache, PHP, PHPMyAdmin, FCGI, SuExec, Pear, and mcrypt is needed, therefore run the following code bliock:
+```
+apt-get -y install apache2 apache2-doc apache2-utils libapache2-mod-php php7.2 php7.2-common php7.2-gd php7.2-mysql php7.2-imap phpmyadmin php7.2-cli php7.2-cgi libapache2-mod-fcgid apache2-suexec-pristine php-pear mcrypt  imagemagick libruby libapache2-mod-python php7.2-curl php7.2-intl php7.2-pspell php7.2-recode php7.2-sqlite3 php7.2-tidy php7.2-xmlrpc php7.2-xsl memcached php-memcache php-imagick php-gettext php7.2-zip php7.2-mbstring php-soap php7.2-soap
+```
+Apache 2.4, Php7.2 and the latest versions of the others packages were installed.
+
+Answer the following questions as shown:
+```
+Web server to reconfigure automatically: apache2 (To select apache2 press Space and then Enter)
+Configure database for phpmyadmin with dbconfig-common? Yes
+MySQL application password for phpmyadmin: (Press Enter)
+
+The modules suexec, rewrite, ssl, actions, and include need to be enabled:
+```
+a2enmod suexec rewrite ssl actions include cgi
+```
+```
+a2enmod dav_fs dav auth_digest headers
+```
+
+In the effort to ensure no vulnerabilities, the HTTP_PROXY header needs to be disabled and to do so, run the following command lines:
+The httpoxy.conf file needs to be created
+```
+nano /etc/apache2/conf-available/httpoxy.conf
+```
+
+Add this content in the file:
+```
+<IfModule mod_headers.c>
+  RequestHeader unset Proxy early
+</IfModule>
+```
+
+Enable the config file by running:
+```
+a2enconf httpoxy
+```
+
+Than restart apache:
+```
+service restart apache2
+```
+
+PHP-FPM needs to be installed as follows:
+```
+apt-get -y install php7.2-fpm
+```
+
+And enabled:
+```
+a2enmod actions proxy_fcgi alias
+service restart apache2
+```
+
+To add some features to the website, install Let's Encrypt and Mailman:
+To install Let's Encrypt:
+```
+apt-get -y install certbot
+```
+
+To install Mailman:
+```
+apt-get -y install mailman
+```
+
+Answer the following questions as shown:
+```
+Languages to support: en (English)
+Missing site list: Ok
+```
+
+Before starting Mailman, the mailing list _mailman_ needs to be created:
+```
+newlist mailman
+```
+
+And do as follows:
+```
+Enter the email of ht person runnin the list: admin@yourdomain.com
+Initial mailman password: (Admin password)
+Hit enter to notify mailman owner... (Press Enter)
+```
+
+Open the file `/etc/aliases` by running the following command line:
+```
+nano /etc/aliases
+```
+
+And add the following code block:
+```
+...
+## mailman mailing list
+mailman:              "|/var/lib/mailman/mail/mailman post mailman"
+mailman-admin:        "|/var/lib/mailman/mail/mailman admin mailman"
+mailman-bounces:      "|/var/lib/mailman/mail/mailman bounces mailman"
+mailman-confirm:      "|/var/lib/mailman/mail/mailman confirm mailman"
+mailman-join:         "|/var/lib/mailman/mail/mailman join mailman"
+mailman-leave:        "|/var/lib/mailman/mail/mailman leave mailman"
+mailman-owner:        "|/var/lib/mailman/mail/mailman owner mailman"
+mailman-request:      "|/var/lib/mailman/mail/mailman request mailman"
+mailman-subscribe:    "|/var/lib/mailman/mail/mailman subscribe mailman"
+mailman-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe mailman"
+```
+
+Run
+```
+newaliases
+```
+
+And restart Postfix:
+```
+service restart postfix
+```
+
+Afterward Mailman configuration needs to be enabled:
+```
+ln -s /etc/mailman/apache.conf /etc/apache2/conf-available/mailman.conf
+```
+
+The configuration needs to be activated:
+```
+a2enconf mailman
+```
+
+Restart Apache:
+```
+service restart apache2
+```
+
+Start the Mailman daemon:
+```
+service mailman start
+```
+
 
 ### Email Server
 #### Theory
@@ -200,6 +334,99 @@ The mail server installation and configuration is completed!
 #### Theory
 
 #### Installation Guide
+PureFTPd and Quota needs to be installed, run the following code block:
+```
+apt-get -y install pure-ftpd-common pure-ftpd-mysql quota quotatool
+```
+
+Ensure the start mode is set correctly when editing the file `/etc/default/pure-ftpd-common`, to do it run the next command line:
+```
+nano /etc/default/pure-ftpd-common
+```
+```
+...
+STANDALONE_OR_INETD=standalone
+...
+VIRTUALCHROOT=true
+...
+```
+
+To allow FTP and TLS sessions, run the next command line:
+```
+echo 1 > /etc/pure-ftpd/conf/TLS
+```
+
+Yet, an SSL certificate is needed to use TLS.
+```
+mkdir -p /etc/ssl/private/
+```
+```
+openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem
+```
+
+And answer as shown the next questions:
+```
+Country Name (2 letter code) [AU]: (Enter Country Name)
+State or Province Name (full name) [Some-State]: (Enter State or Province Name)
+Locality Name (eg, city) []: (Enter City)
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: (Enter Organization Name)
+Organization Unit Name (eg, section) []: (Enter Organizational Unit Name)
+Common Name (eg, YOUR name) []: (Enter the FullyQualifiedDomainName (FQDN) (eg, "ns1.yourdomain.com"))
+Email Address []: (Enter Email Address)
+```
+
+Change the SSL certificate permissions:
+```
+chmod 600 /etc/ssl/private/pure-ftpd.pem
+```
+
+Restart PureFTPd:
+```
+service restart pure-ftpd-mysql
+```
+
+To establish quota, be sure to add the command lines needed as shown:
+```
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point> <type> <options> <dump> <pass>
+/dev/mapper/server1--vg-root / ext4 errors=remount-ro,usrjquota=quota.user,grpjquota=quota.group,jqfmt=vfsv0 0 1
+/dev/mapper/server1--vg-swap_1 none swap sw 0 0
+/dev/fd0 /media/floppy0 auto rw,user,noauto,exec,utf8 0 0
+```
+
+Run as follows to enable quota:
+```
+mount -o remount /
+```
+
+Be sure that no errors appear by running the next command lines:
+```
+quotacheck -avugm
+quotaon -avug
+```
+
+The output should be as follows:
+```
+root@ns1:/opt/metronome# quotacheck -avugm
+quotacheck: Scanning /dev/mapper/server1--vg-root [/] done
+quotacheck: Cannot stat old user quota file //quota.user: No such file or directory. Usage will not be subtracted.
+quotacheck: Cannot stat old group quota file //quota.group: No such file or directory. Usage will not be subtracted.
+quotacheck: Cannot stat old user quota file //quota.user: No such file or directory. Usage will not be subtracted.
+quotacheck: Cannot stat old group quota file //quota.group: No such file or directory. Usage will not be subtracted.
+quotacheck: Checked 13602 directories and 96597 files
+quotacheck: Old file not found.
+quotacheck: Old file not found.
+root@ns1:/opt/metronome# quotaon -avug
+/dev/mapper/ns1--vg-root [/]: group quotas turned on
+/dev/mapper/ns1--vg-root [/]: user quotas turned on
+```
+
+The FTP service is complete!
 
 ### Video Streaming Server
 #### Theory
