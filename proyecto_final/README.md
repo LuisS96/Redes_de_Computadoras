@@ -38,6 +38,7 @@ apt-get remove apparmor apparmor-utils
   - DBS Server
   - FTP Server
   - Video Streaming Server
+  - ISPConfig 3.1 (Only Installation Guide)
   
 ### DNS Server
 #### Theory
@@ -507,3 +508,72 @@ Download the file and execute it after downloading, the video streaming server w
 Afterwards, create a Plex Account at this link [Plex Media Server/Sign Up](https://app.plex.tv/auth#?forwardUrl=https%3A%2F%2Fwww.plex.tv%2Fsign-up%2F%3Ffa%3D1%26fasignup%3D1&clientID=6d9fc410-90bb-373d-f685-60bf2d98b9e7&&context%5Bdevice%5D%5Bproduct%5D=www.plex.tv&context%5Bdevice%5D%5Bplatform%5D=Firefox&context%5Bdevice%5D%5BplatformVersion%5D=63.0&context%5Bdevice%5D%5Bdevice%5D=OS%20X&signUp=1) and be sure at the settings section that you have a remote access to it.
 
 The Video Streaming Server installation and configuration is complete!
+
+### ISPConfig3.1
+#### Installation Guide
+To install ISPConfig3.1, run the following:
+```
+cd /tmp
+wget -O ispconfig.tar.gz https://git.ispconfig.org/ispconfig/ispconfig3/repository/archive.tar.gz?ref=stable-3.1
+tar xfz ispconfig.tar.gz
+cd ispconfig3*/install/
+```
+
+Run ISPConfig3.1 to setup all the services that already installed, like Email, Web, etc.:
+```
+php -q install.php
+```
+Remember, do NOT press `Ctrl + C`, tap in `quit` to stop installer.
+
+Answer as follows to setup Postgrey and Postfix:
+```
+Select language (en, de) [en]: (Press Enter)
+Installation mode (standard, expert) [standard]: (Press Enter)
+Full qualified hostname (FQDN) of the server, eg server1.domain.tld [server1.canomi.com]: (Press Enter)
+MySQL server hostname [localhost]: (Press Enter)
+MySQL server port [3306]: (Press Enter)
+MySQL root username [root]: (Press Enter)
+MySQL root password []: (Enter MySQL root password)
+MySQL database to create [dbispconfig]: (Press Enter)
+MySQL charset [utf8]: (Press Enter)
+```
+
+Answer as follows to setup Mailman, Dovecot, Amavisd, Getmail, BIND, PureFTPd, and Apache:
+```
+Country Name (2 letter code) [AU]: (Enter Country Code)
+State or Province Name (full name) [Some-state]: (Enter State or Province Name)
+Locality Name (eg, city) []: (Enter City Name)
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: (Enter Company Name)
+Organizational Unit Name (eg, section) []: (Press Enter if none)
+Common Name (e.g. server FQDN or YOUR name) []: (Enter your domain, e.g., ns1.yourdomain.com)
+Email Address []: (Enter Email Address)
+```
+
+Answer as follows to setup Fail2Ban and ISPConfig:
+```
+Country Name (2 letter code) [AU]: (Enter Country Code)
+Locality Name (eg, city) []: (Enter City Name)
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: (Enter Company Name)
+Organizational Unit Name (eg, section) []: (Press Enter if none)
+Common Name (e.g. server FQDN or YOUR name) []: (Enter your domain, e.g., ns1.yourdomain.com)
+Email Address []: (Enter Email Address)
+...
+Do you want a secure (SSL) connection to the ISPConfig web interface (y,n) [Y]: (Press Enter)
+```
+
+Answer as follows to setup DBServer:
+```
+Country Name (2 letter code) [AU]: (Enter Country Code)
+State or Province Name (full name) [Some-state]: (Enter State or Province Name)
+Locality Name (eg, city) []: (Enter City Name)
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: (Enter Company Name)
+Organizational Unit Name (eg, section) []: (Press Enter if none)
+Common Name (e.g. server FQDN or YOUR name) []: (Enter your domain, e.g., ns1.yourdomain.com)
+Email Address []: (Enter Email Address)
+
+Please enter the following 'extra' attributes to be sent with your certificate request
+A challenge password []: (Press Enter)
+An optional company name []: (Press Enter)
+```
+
+ISPConfig3.1 install is complete. By logging in at the next URL https://ns1.yourdomain.com:8080/, one can access ISPConfig 3.
