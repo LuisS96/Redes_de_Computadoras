@@ -43,6 +43,19 @@ apt-get remove apparmor apparmor-utils
 #### Theory
 
 #### Installation Guide
+BIND needs to installed as follows:
+```
+apt-get -y install bind9 dnsutils haveged
+```
+
+Enable and start the haveged Daemon:
+```
+systemctl enable haveged
+systemctl start haveged
+```
+
+The DNS server installation and configuration is complete!
+
 
 ### Web Server
 #### Theory
@@ -181,7 +194,6 @@ Start the Mailman daemon:
 ```
 service mailman start
 ```
-
 
 ### Email Server
 #### Theory
@@ -332,6 +344,7 @@ patch < /tmp/ubuntu-amavisd-new-2.11.patch
 ```
 
 The database server installation and configuration is complete!
+
 
 ### FTP Server
 #### Theory
