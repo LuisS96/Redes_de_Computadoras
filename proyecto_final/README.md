@@ -237,6 +237,14 @@ Now restart Postfix:
 service restart postfix
 ```
 
+The mail server installation and configuration is complete!
+
+### DBS Server
+#### Theory
+
+#### Installation Guide
+MySQL was previously installed with Postfix, we will now continue from that point.
+
 To make MySQL listen all interfaces and not only 'localhost', it is needed to run the folowwing:
 ```
 nano /etc/mysql/mariadb.conf.d/50-server.cnf
@@ -314,7 +322,7 @@ freshclam
 service start clamav-daemon
 ```
 
-If an error appears, do not worry and run the following command lines:
+If an error appears, do not worry, run the following command lines:
 ```
 cd /tmp
 wget https://git.ispconfig.org/ispconfig/ispconfig3/raw/stable-3.1/helper_scripts/ubuntu-amavisd-new-2.11.patch
@@ -323,12 +331,7 @@ cp -pf amavisd-new amavisd-new_bak
 patch < /tmp/ubuntu-amavisd-new-2.11.patch
 ```
 
-The mail server installation and configuration is completed!
-
-### DBS Server
-#### Theory
-
-#### Installation Guide
+The database server installation and configuration is complete!
 
 ### FTP Server
 #### Theory
@@ -426,7 +429,7 @@ root@ns1:/opt/metronome# quotaon -avug
 /dev/mapper/ns1--vg-root [/]: user quotas turned on
 ```
 
-The FTP service is complete!
+The FTP server installation and configuration is complete!
 
 ### Video Streaming Server
 #### Theory
