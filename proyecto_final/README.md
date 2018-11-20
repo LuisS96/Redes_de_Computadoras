@@ -72,6 +72,7 @@ Answer the following questions as shown:
 Web server to reconfigure automatically: apache2 (To select apache2 press Space and then Enter)
 Configure database for phpmyadmin with dbconfig-common? Yes
 MySQL application password for phpmyadmin: (Press Enter)
+```
 
 The modules suexec, rewrite, ssl, actions, and include need to be enabled:
 ```
