@@ -493,3 +493,17 @@ The FTP server installation and configuration is complete!
 #### Theory
 
 #### Installation Guide
+Plex Media Server will be installed, to do so, go to your browser and copy/paste at the URL this link
+```
+https://www.plex.tv/media-server-downloads/
+```
+
+Next, choose your right operating system - **`linux`**
+
+Choose your right distribution - **`Ubuntu 14.04 or newer`**
+
+Download the file and execute it after downloading, the video streaming server will get installed.
+
+Afterwards, create a Plex Account at this link [Plex Media Server/Sign Up](https://app.plex.tv/auth#?forwardUrl=https%3A%2F%2Fwww.plex.tv%2Fsign-up%2F%3Ffa%3D1%26fasignup%3D1&clientID=6d9fc410-90bb-373d-f685-60bf2d98b9e7&&context%5Bdevice%5D%5Bproduct%5D=www.plex.tv&context%5Bdevice%5D%5Bplatform%5D=Firefox&context%5Bdevice%5D%5BplatformVersion%5D=63.0&context%5Bdevice%5D%5Bdevice%5D=OS%20X&signUp=1) and be sure at the settings section that you have a remote access to it.
+
+The Video Streaming Server installation and configuration is complete!
