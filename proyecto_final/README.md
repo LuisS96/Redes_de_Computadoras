@@ -42,6 +42,13 @@ apt-get remove apparmor apparmor-utils
   
 ### DNS Server
 #### Theory
+The DNS (Domain Name System) main objective is to create a link between the human readable network address name and its machine numerical address. 
+
+The DNS is managed by the ICANN (Internet Corporation for Assigned Names and Numbers), which uses a hierarchical addressing system to prevent confusion between sites.
+
+In theory, the Internet is divided into +250 top-level domains, and each one of those is partitioned into more subdomains.
+
+In this project, the open source software BIND will be implemented in order to our own Domain Name System.  BIND provides the software and protocols necessary to answer name service questions.
 
 #### Installation Guide
 BIND needs to installed as follows:
@@ -60,6 +67,20 @@ The DNS server installation and configuration is complete!
 
 ### Web Server
 #### Theory
+Referring to the hardware, a Web Server is a computer that’s connected to the Internet. It stores the software and the respective website information and files. 
+
+On the other hand, the Web Server software includes the actual system of the website. It must be able to understand web addresses and protocols such as HTTP. It can be accessed via domain names, and it delivers their content to the end user. 
+
+The Web Servers can be classified into two categories, static and dynamic. A static web server just sends its files to every client uniformly. However, a dynamic server can differentiate between users and updates the files before sending them to the end user.
+
+Every web server performs the following main loop when accessed by a client:
+- Accept a TCP connection from a client.
+- Retrieve the name file requested, which is dictated by the path.
+- Retrieve the actual file from disk.
+- Send the contents of the file to the client (this may change depending on the web server type).
+- Release the TCP connection.
+
+An important feature of a web server is that it can only serve a single request at a time, this is solved via multithreading. This feature allows several clients to be connected to the same server.
 
 #### Installation Guide
 The install of Apache, PHP, PHPMyAdmin, FCGI, SuExec, Pear, and mcrypt is needed, therefore run the following code bliock:
@@ -199,6 +220,16 @@ service mailman start
 
 ### Email Server
 #### Theory
+The term “Email Server” refers to a computer dedicated to handle and distribute incoming mail to it’s local users, and send outgoing messages. This type of server uses the Simple Mail Transfer Protocol (SMTP) to create ist client-server application model.
+
+The process of handling an outgoing email can be divided into six steps:
+- Once the mail is composed, the email client connects to the SMTP server.
+- The SMTP server receives the client’s email; address, the recipient's email address, the body of the message, and any files attached to the mail.
+- The SMTP server communicates to the recipient's email address corresponding Domain Name Server.
+- The Domain Name Server takes the recipient's email domain name and translates it into an IP address and sends it to the sender’s SMTP server.
+- Now, the SMTP server connects to the recipient's SMTP server and sends the actual message.
+- The recipient's SMTP server reads the message and directs it to the corresponding user. At this point, the message can be viewed by the recipient.
+
 
 #### Installation Guide
 The install of Postfix, Dovecot, MariaDB, rkhunter, and binutils is needed, therefore run the following code bliock:
