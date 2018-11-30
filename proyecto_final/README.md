@@ -63,6 +63,8 @@ The DNS server installation and configuration is complete!
 
 ### Web Server
 #### Theory
+When the term “Web Server” is brought up, it often refers to a physical machine that is interconnected to an architectural framework that correlates millions of machines all over the world. This framework is called the World Wide Web, it consists of a vast collection of content, mostly in the form of Web Pages, that make use of the HyperText Transfer Protocol (HTTP) to convey graphical information to the user. This are the bases of the Internet, allowing the interconnection of any given machine to the rest of the web. The concept of Web Server can be interpreted as the hardware or the software.
+
 Referring to the hardware, a Web Server is a computer that’s connected to the Internet. It stores the software and the respective website information and files. 
 
 On the other hand, the Web Server software includes the actual system of the website. It must be able to understand web addresses and protocols such as HTTP. It can be accessed via domain names, and it delivers their content to the end user. 
