@@ -218,7 +218,7 @@ service mailman start
 
 ### Email Server
 #### Theory
-The term “Email Server” refers to a computer dedicated to handle and distribute incoming mail to it’s local users, and send outgoing messages. This type of server uses the Simple Mail Transfer Protocol (SMTP) to create ist client-server application model.
+The term “Email Server” refers to a computer dedicated to handle and distribute incoming mail to it’s local users, and send outgoing messages. This type of server uses the Simple Mail Transfer Protocol (SMTP) to create a client-server application model. This model consists of two kinds of subsystems, the user agents and the message transfer agents. The user agents allow the user to send and read email, and the message transfer agents move the messages throughout the web from source to destination. 
 
 The process of handling an outgoing email can be divided into six steps:
 - Once the mail is composed, the email client connects to the SMTP server.
