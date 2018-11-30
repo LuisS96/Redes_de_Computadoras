@@ -44,6 +44,15 @@ apt-get remove apparmor apparmor-utils
 #### Theory
 The DNS (Domain Name System) main objective is to create a link between the human readable network address name and its machine numerical address. The DNS is managed by the ICANN (Internet Corporation for Assigned Names and Numbers), which uses a hierarchical addressing system to prevent confusion between sites.In theory, the Internet is divided into +250 top-level domains, and each one of those is partitioned into more subdomains.
 
+Every domain has a set of resource records associated with them. A resource record is an entry in the DNS database which contains information of the domain, and it is composed of five fields: 
+      Domain Name     Time to live      Class     Type      Value
+
+The domain name is the primary key in the DNS database, and as mentioned before, the associated human readable name of the domain. The time to live is a numerical value associated with the stability or volatility of input. The third field, the class, is rarely used, but for Internet information domains it will have "IN" as its value. The type field is one of the types of resource records from the table below, which helps determine the type of data that the value field will hold.
+
+![Types of Resource Record Values](Type_Resource_Records.PNG)
+
+The value record is the information related to the record's domain name, which can be a number, a string of ASCII characters, or the name of another domain. 
+
 In this project, the open source software BIND will be implemented in order to our own Domain Name System.  BIND provides the software and protocols necessary to answer name service questions.
 
 #### Installation Guide
