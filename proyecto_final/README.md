@@ -524,6 +524,7 @@ The FTP server installation and configuration is complete!
 
 ### Video Streaming Server
 #### Theory
+As the name implies, a Video Streaming Server creates a regular state of delivering video packets over the Internet to a certain user. 
 
 #### Installation Guide
 Plex Media Server will be installed, to do so, go to your browser and copy/paste at the URL this link
