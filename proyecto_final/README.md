@@ -42,11 +42,7 @@ apt-get remove apparmor apparmor-utils
   
 ### DNS Server
 #### Theory
-The DNS (Domain Name System) main objective is to create a link between the human readable network address name and its machine numerical address. 
-
-The DNS is managed by the ICANN (Internet Corporation for Assigned Names and Numbers), which uses a hierarchical addressing system to prevent confusion between sites.
-
-In theory, the Internet is divided into +250 top-level domains, and each one of those is partitioned into more subdomains.
+The DNS (Domain Name System) main objective is to create a link between the human readable network address name and its machine numerical address. The DNS is managed by the ICANN (Internet Corporation for Assigned Names and Numbers), which uses a hierarchical addressing system to prevent confusion between sites.In theory, the Internet is divided into +250 top-level domains, and each one of those is partitioned into more subdomains.
 
 In this project, the open source software BIND will be implemented in order to our own Domain Name System.  BIND provides the software and protocols necessary to answer name service questions.
 
