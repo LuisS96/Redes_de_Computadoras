@@ -423,6 +423,7 @@ The database server installation and configuration is complete!
 
 ### FTP Server
 #### Theory
+The File Transfer Protocol (FTP) is a set of rules that machines use to transfer files over a TCP/IP network. These kind of servers are machines dedicated to receiving an FTP connection from FTP clients. In order to access the files of a FTP server, most of the time, a username and a password must be provided to the server, ensuring a somewhat secure server. Once the access is granted, the client can ask for a certain file in the server’s memory, or it request permission for uploading a local file.
 
 #### Installation Guide
 PureFTPd and Quota needs to be installed, run the following code block:
