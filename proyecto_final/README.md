@@ -337,6 +337,18 @@ The mail server installation and configuration is complete!
 
 ### DBS Server
 #### Theory
+A DBS Server, or Database Server, is a component of the back-end system used for data analysis, storage and data manipulation in a client/server architecture. Databases are widely used in dynamic websites to allow data persistance, thanks to the fact they provide an interface to save data into the server's memory. These consist of tables of information with entries for each new data item depending on the table's conetent type, with columns for key-value pairs. Storing the data in a database prevents data loss in case the server crashes or loses power, and it has the benefit of reducing the load on the main memory and CPU of the server. Examples of the applications of having DBS Servers are the possibility of having users and account data in a website and storing important variable values for long-term usage. 
+
+In the following image provided by Upwork's article "A Beginner’s Guide to Back-End Development", the role of the database can be seen as a key component inside a client-server architecture. It is worth noting that the main server and the DBS server can be in different computers. 
+
+![Database's role in a client-server architecture](Database.PNG)
+
+When a user makes a GET request, the DBS server is responsible of accepting the query, fetching the data and returning it to the application the client is using. Databases can also have their data modified by the clients; furthermore, there is a variety of operations that can be done on databases: insert, update, select and delete, to mention some of the main ones. The DBS server scripts should be the ones to determine if certain operations are permitted by the current client, or more specifically, the user currently logged in the particular client side.
+
+Another important factor to consider are the two main types of databases: relational and non-relational. As Upwork's diagram below explains, relational databases consist of multiple tables of data connected between; in contrast, non-relational databases store each table inside a single document, used more frequently when there is a massive amount of information that can't be intuitively categorized, inconsistent or incomplete, offering more flexibility and scalibility than their relational counterpart. 
+
+![Relational vs Non-Relational Databases](Relational_vs_Nonrelational_Database.PNG)
+
 
 #### Installation Guide
 MySQL was previously installed with Postfix, we will now continue from that point.
@@ -619,3 +631,7 @@ An optional company name []: (Press Enter)
 ```
 
 ISPConfig3.1 install is complete. By logging in at the next URL https://ns1.yourdomain.com:8080/, one can access ISPConfig 3.
+
+###References
+https://www.codecademy.com/articles/back-end-architecture
+https://www.webopedia.com/TERM/D/database_server.html
