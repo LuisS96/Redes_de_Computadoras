@@ -633,12 +633,14 @@ An optional company name []: (Press Enter)
 ISPConfig3.1 install is complete. By logging in at the next URL https://ns1.yourdomain.com:8080/, one can access ISPConfig 3.
 
 ### References
-1. https://www.isc.org/downloads/bind/
-2. https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server
-3. https://whatismyipaddress.com/mail-server
-4. https://www.techopedia.com/definition/26108/ftp-server
-5. https://www.akamai.com/uk/en/resources/video-streaming-server.jsp
+1. Internet Systems Consortium, (2018). BIND Open Source DNS Server. Recovered from: https://www.isc.org/downloads/bind/
+2. Mozilla Developer Network, (n.d.). What is a web server?. Recovered from: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server
+3. WhatIsMyIPAddress, (n.d.). What is a Mail Server?. Recovered from: https://whatismyipaddress.com/mail-server
+4. Technopedia, (n.d.). What is an FTP server?. Recovered from: https://www.techopedia.com/definition/26108/ftp-server
+5. Akamai, (n.d.). Video Streaming Server. Recovered from: https://www.akamai.com/uk/en/resources/video-streaming-server.jsp
 6. Nelson, S. L., & Coleman, P. (1999). Mba's guide to the internet : the essential internet reference for business professionals. Retrieved from https://ebiblio.cetys.mx:4153
 7. Peterson, L. L., & Davie, B. S. (2007). Computer networks : a systems approach. Retrieved from https://ebiblio.cetys.mx:4153
-8. https://www.codecademy.com/articles/back-end-architecture
-9. https://www.webopedia.com/TERM/D/database_server.html
+8. CodeCademy, (n.d.). Back-end Architecture. Recovered from: https://www.codecademy.com/articles/back-end-architecture
+9. Webopedia, (n.d.). Database Server. Recovered from: https://www.webopedia.com/TERM/D/database_server.html
+10. Wodehouse, C., (2018). A beginner's guide to back end development. Recovered from https://www.upwork.com/hiring/development/a-beginners-guide-to-back-end-development/
+11. Wodehouse, C., (2018). A Guide to Database Technology. Recovered from: https://www.upwork.com/hiring/data/a-guide-to-database-technology/
