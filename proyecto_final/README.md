@@ -551,6 +551,8 @@ Video streaming can be divided into two major groups: streaming stored media, fo
 
 Here, we will focus on stored media streaming, that is, sending media files that already exist on the server’s disk. This process starts with a file request from the client, and a file response from the server; just as the file download starts, the file response is handed off to a media player, and the rest of the file downloads directly into the media player, which can begin to play the media file as the download is in progress.
 
+![Media Server stages](Media_Server.png)
+
 #### Installation Guide
 Plex Media Server will be installed, to do so, go to your browser and copy/paste at the URL this link
 ```
