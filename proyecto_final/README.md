@@ -545,7 +545,11 @@ The FTP server installation and configuration is complete!
 
 ### Video Streaming Server
 #### Theory
-As the name implies, a Video Streaming Server creates a regular state of delivering video packets over the Internet to a certain user. 
+As the name implies, a Video Streaming Server creates a regular state of delivering video packets over the Internet to a certain user. This form of multimedia streaming started to grow in strength in the early 2000's, giving access to real-time audio and/or video to most Internet users with their “limited” connection bandwidth.
+
+Video streaming can be divided into two major groups: streaming stored media, for example, watching a movie on Netflix, and streaming live media, which can be interpreted as calling someone over Skype. Even though greater data rates are taking place between the general public, data compression is key in sending video over the Internet. The JPEG Standard (Joint Photographic Experts Group) and the MPEG Standard (Motion Picture Experts Group) are the two common compression standards used widely over the Web.
+
+Here, we will focus on stored media streaming, that is, sending media files that already exist on the server’s disk. This process starts with a file request from the client, and a file response from the server; just as the file download starts, the file response is handed off to a media player, and the rest of the file downloads directly into the media player, which can begin to play the media file as the download is in progress.
 
 #### Installation Guide
 Plex Media Server will be installed, to do so, go to your browser and copy/paste at the URL this link
